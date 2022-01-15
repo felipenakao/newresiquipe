@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+
 import WhatsAppButton from "../Buttons/WhatsAppButton";
+import MenuIconMobile from "./MenuIconMobile";
 import ShoppingCartButton from '../Buttons/ShoppingCartButton'
 import {
   TopMenu,
   Wrapper,
-  MobileMenuIcon,
   Navigation,
   MobileSocialGrid,
   NavigationLinks,
@@ -60,21 +59,14 @@ const Header = () => {
 
         <ButtonsGrid>
           <ShoppingCartButton />
+
           <WhatsAppButton />
         </ButtonsGrid>
 
-        <MobileMenuIcon
-          title="Abrir/Fechar menu"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
-        </MobileMenuIcon>
+        <MenuIconMobile isOpen={isOpen} setIsOpen={setIsOpen} />
+
         </Wrapper>
       </TopMenu>
-
-      <Navigation>
-        teste
-      </Navigation>
 
       <Navigation aria-expanded={isOpen} show={isOpen}>
         <NavigationLinks>
@@ -96,6 +88,7 @@ const Header = () => {
 
         <MobileButtonsGrid>
           <ShoppingCartButton />
+
           <WhatsAppButton />
         </MobileButtonsGrid>
 

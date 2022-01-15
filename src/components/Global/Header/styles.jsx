@@ -2,7 +2,11 @@ import styled from 'styled-components';
 import { laptop, laptopL } from '../../../devices.js';
 
 export const TopMenu = styled.header`
-  padding: 30px;
+  padding: 15px 30px;
+
+  @media screen and (min-width: ${laptop}) {
+    padding: 30px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -48,23 +52,25 @@ export const Navigation = styled.nav`
   flex-direction: column;
   background: #FECB00;
   opacity: ${props => props.show ? '1' : '0'};
-  width: calc(100vw - 60px);
+  width: calc(100% - 60px);
   position: absolute;
   padding: 30px;
   transition-property: opacity, height;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-out;
+  transition-duration: .5s;
+  transition-timing-function: ease;
   height: ${props => props.show ? 'calc(100vh - 118px)' : '0px'};
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  z-index: 999999;
 
   @media screen and (min-width: ${laptop}) {
     padding: 15px;
     height: 30px;
-    width: 100vw;
+    width: calc(100% - 30px);
     opacity: 1;
     transition: none;
+    position: relative;
   }
 `;
 
@@ -83,7 +89,7 @@ export const NavigationLinks = styled.ul`
     text-decoration: none;
     color: #032F6A;
     font-family: Prompt;
-    font-weight: 500;  
+    font-weight: 600;  
   }
 
   @media screen and (min-width: ${laptop}) {
@@ -159,3 +165,5 @@ export const ButtonsGrid = styled.div`
     display: none;
   }
 `
+
+

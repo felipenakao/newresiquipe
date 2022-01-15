@@ -1,9 +1,10 @@
 import React from 'react'
 import Header from '../Global/Header/Header';
+import Featured from './components/Featured';
 
 const Home = () => (<>
   <Header />
-  <h1>Hello World</h1>
+  <Featured />
 </>);
 
 export default Home
