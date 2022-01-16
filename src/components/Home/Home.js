@@ -15,7 +15,7 @@ const Home = () => (<>
   <BaseSeparator />
   <Services/>
   <BaseSeparator />
-  <Equipaments />
+  {/* <Equipaments /> */}
   <BaseSeparator />
   <Videos />
   <Footer />
