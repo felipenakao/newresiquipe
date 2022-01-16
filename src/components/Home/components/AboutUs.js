@@ -74,9 +74,9 @@ const AboutUs = () => {
 
       <AboutUsContainer>
         <AboutUsImageGrid>
-          <AboutUsImage src="/assets/images/about-us/about-01.jpeg" />
-          <AboutUsImage src="/assets/images/about-us/about-02.jpeg" />
-          <AboutUsImage src="/assets/images/about-us/about-03.jpeg" />
+          <AboutUsImage src="/assets/images/about-us/about-01.jpg" />
+          <AboutUsImage src="/assets/images/about-us/about-02.jpg" />
+          <AboutUsImage src="/assets/images/about-us/about-03.jpg" />
         </AboutUsImageGrid>
 
         <AboutUsTextGrid>

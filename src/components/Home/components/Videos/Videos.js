@@ -23,9 +23,9 @@ const VideosGrid = styled.div`
 `;
 
 const videos = [
-  { id: 0, url: 'nf66BgABOTs', title: 'Aplicação de resina com Máquina Dosadora CNC', thumb: '/assets/images/videos/thumb-01.jpeg' },
-  { id: 1, url: 'NMFJy7p277s', title: 'Aplicação de resina com Máquina Dosadora CNC', thumb: '/assets/images/videos/thumb-04.jpeg' },
-  { id: 2, url: 'QgAYUjCSGDs', title: 'Aplicação de resina com Máquina Dosadora com Tanques', thumb: '/assets/images/videos/thumb-02.jpeg' },
+  { id: 0, url: 'nf66BgABOTs', title: 'Aplicação de resina com Máquina Dosadora CNC', thumb: '/assets/images/videos/thumb-01.jpg' },
+  { id: 1, url: 'NMFJy7p277s', title: 'Aplicação de resina com Máquina Dosadora CNC', thumb: '/assets/images/videos/thumb-04.jpg' },
+  { id: 2, url: 'QgAYUjCSGDs', title: 'Aplicação de resina com Máquina Dosadora com Tanques', thumb: '/assets/images/videos/thumb-02.jpg' },
 ]
 
 const Videos = () => {
