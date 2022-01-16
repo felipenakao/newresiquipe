@@ -134,7 +134,6 @@ const BrazilContainer = styled.div`
 `
 
 const Featured = () => {
-  console.log('window.innerWidth > tablet', window.innerWidth > tablet)
   return (
     <>
       <FeaturedContainer>

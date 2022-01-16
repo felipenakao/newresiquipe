@@ -37,8 +37,6 @@ const FilterButton = styled.button`
 `;
 
 const Filter = ({ categories, isActive, setIsActive }) => {
-  console.log('isActive', isActive)
-  console.log('setIsActive', setIsActive)
   return (
     <FilterGrid>
       {categories.map((category) => (

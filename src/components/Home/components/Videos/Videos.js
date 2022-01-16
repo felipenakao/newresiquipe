@@ -26,9 +26,6 @@ const videos = [
   { id: 0, url: 'nf66BgABOTs', title: 'Aplicação de resina com Máquina Dosadora CNC', thumb: '/assets/images/videos/thumb-01.jpeg' },
   { id: 1, url: 'NMFJy7p277s', title: 'Aplicação de resina com Máquina Dosadora CNC', thumb: '/assets/images/videos/thumb-04.jpeg' },
   { id: 2, url: 'QgAYUjCSGDs', title: 'Aplicação de resina com Máquina Dosadora com Tanques', thumb: '/assets/images/videos/thumb-02.jpeg' },
-  { id: 3, url: 'QgAYUjCSGDs', title: 'Aplicação de resina com Máquina Dosadora com Tanques', thumb: '/assets/images/videos/thumb-02.jpeg' },
-  { id: 3, url: 'QgAYUjCSGDs', title: 'Aplicação de resina com Máquina Dosadora com Tanques', thumb: '/assets/images/videos/thumb-02.jpeg' },
-  { id: 3, url: 'QgAYUjCSGDs', title: 'Aplicação de resina com Máquina Dosadora com Tanques', thumb: '/assets/images/videos/thumb-02.jpeg' },
 ]
 
 const Videos = () => {
@@ -43,8 +40,8 @@ const Videos = () => {
       </BaseTitle>
 
       <VideosGrid>
-        {videos.map(({ title, thumb, url }) => {
-        return (<VideoCard title={title} url={url} thumb={thumb} isOpen={isOpen} setOpen={setOpen} />)
+        {videos.map(({ id, title, thumb, url }) => {
+        return (<VideoCard key={id} title={title} url={url} thumb={thumb} isOpen={isOpen} setOpen={setOpen} />)
         })}
       </VideosGrid>
 

@@ -56,7 +56,7 @@ const Equipaments = () => {
       image: "/assets/images/equipments/maquina-dosadora-cnc.svg",
     },
     {
-      id: 3,
+      id: 2,
       title: "Dosador com Tanques",
       category: 2,
       text: "Dosador / Misturador com tanque para Resina PU",
@@ -70,7 +70,7 @@ const Equipaments = () => {
       image: "/assets/images/equipments/desgaseificador-para-resina-pu.svg",
     },
     {
-      id: 3,
+      id: 4,
       title: "Mesa térmica para resinagem",
       category: 3,
       text: "Mesa de tamanho 1200 x 600 mm",
@@ -105,8 +105,9 @@ const Equipaments = () => {
         />
 
         <EquipmentsGrid>
-          {equipments.filter(equipment => ((isActive === 0) || (equipment.category === isActive))).map(({ title, category, image, text }) => (
+          {equipments.filter(equipment => ((isActive === 0) || (equipment.category === isActive))).map(({ id, title, category, image, text }) => (
             <EquipmentCard
+              key={id}
               src={image}
               title={title}
               category={categories.find(({ id }) => category === id).label}

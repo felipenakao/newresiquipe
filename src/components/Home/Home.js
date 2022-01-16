@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseSeparator from '../Global/BaseSeparator';
+import Footer from '../Global/Footer';
 import Header from '../Global/Header/Header';
 import AboutUs from './components/AboutUs';
 import Equipaments from './components/Equipaments/Equipaments';
@@ -17,6 +18,7 @@ const Home = () => (<>
   <Equipaments />
   <BaseSeparator />
   <Videos />
+  <Footer />
 </>);
 
 export default Home
