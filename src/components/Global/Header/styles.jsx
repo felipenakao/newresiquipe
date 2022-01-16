@@ -3,9 +3,14 @@ import { laptop, laptopL } from '../../../devices.js';
 
 export const TopMenu = styled.header`
   padding: 15px 30px;
+  position: fixed;
+  z-index: 9;
+  background: #fff;
+  width: calc(100% - 60px);
 
   @media screen and (min-width: ${laptop}) {
     padding: 30px;
+    position: static
   }
 `;
 
@@ -53,16 +58,16 @@ export const Navigation = styled.nav`
   background: #FECB00;
   opacity: ${props => props.show ? '1' : '0'};
   width: calc(100% - 60px);
-  position: absolute;
-  padding: 30px;
+  position: fixed;
+  padding: 45px 30px;
   transition-property: opacity, height;
   transition-duration: .5s;
   transition-timing-function: ease;
-  height: ${props => props.show ? 'calc(100vh - 118px)' : '0px'};
+  height: ${props => props.show ? '100vh' : '0px'};
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 999999;
+  z-index: 8;
 
   @media screen and (min-width: ${laptop}) {
     padding: 15px;
@@ -70,7 +75,7 @@ export const Navigation = styled.nav`
     width: calc(100% - 30px);
     opacity: 1;
     transition: none;
-    position: relative;
+    position: static;
   }
 `;
 

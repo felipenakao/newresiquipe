@@ -9,13 +9,20 @@ const FeaturedContainer = styled.section`
   flex-direction: column;
   background: #002f6a;
   box-shadow: inset 0px 0px 30px rgba(0,0,0, .3);
+  padding-top: 60px;
+
+  @media screen and (min-width: ${tablet}) {
+    margin: 0px auto;
+    padding: 0px 60px 15px;
+    box-shadow: 0px 0px 30px rgba(0,0,0, .3);
+  }
 `;
 
 const FeaturedTitleGrid = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 15px 5px;
   margin: 0px 30px;
   border: 1px solid #0047a0;
   border-end-end-radius: 15px;
@@ -30,8 +37,8 @@ const FeaturedTitleGrid = styled.div`
 `;
 
 const FeaturedTitleText = styled.h2`
-  font-family: Prompt;
-  font-size: 18px;
+  font-family: 'Prompt';
+  font-size: 16px;
   font-weight: 600;
   margin: 0px;
   color: #fff;

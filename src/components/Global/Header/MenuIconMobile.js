@@ -79,7 +79,12 @@ const Button = styled.div`
 `
 
 const MenuIconMobile = ({ isOpen, setIsOpen }) => {
-  return <Button onClick={() => setIsOpen(!isOpen)} className={isOpen ? 'open' : ''}>
+  return <Button onClick={() => {
+    setIsOpen(!isOpen)
+
+    document.body.style.overflow = !isOpen ? 'hidden' : 'auto'
+
+    }} className={isOpen ? 'open' : ''}>
       <span></span>
       <span></span>
       <span></span>
@@ -88,8 +93,8 @@ const MenuIconMobile = ({ isOpen, setIsOpen }) => {
 }
 
 MenuIconMobile.propTypes = {
-  isOpen: Boolean,
-  setIsOpen: Function
+  isOpen: PropTypes.bool,
+  setIsOpen: PropTypes.func
 }
 
 export default MenuIconMobile
