@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { tablet, laptopL } from "../../../../devices";
 
 import BaseSection from "../../../Global/BaseSection";
