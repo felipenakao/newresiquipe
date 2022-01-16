@@ -153,16 +153,19 @@ const Featured = () => {
             autoPlay
           >
             <div>
-              <img src="/assets/images/slider/maquina.jpg" />
+              <img src="/assets/images/slider/slider-01.jpg" />
             </div>
             <div>
-              <img src="/assets/images/slider/maquina.jpg" />
+              <img src="/assets/images/slider/slider-02.jpg" />
             </div>
             <div>
-              <img src="/assets/images/slider/maquina.jpg" />
+              <img src="/assets/images/slider/slider-03.jpg" />
             </div>
             <div>
-              <img src="/assets/images/slider/maquina.jpg" />
+              <img src="/assets/images/slider/slider-04.jpg" />
+            </div>
+            <div>
+              <img src="/assets/images/slider/slider-05.jpg" />
             </div>
           </Carousel>
         </CarouselContainer>
