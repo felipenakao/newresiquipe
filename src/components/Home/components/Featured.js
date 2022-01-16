@@ -44,7 +44,7 @@ const FeaturedTitleText = styled.h2`
   color: #fff;
 
   @media screen and (min-width: ${tablet}) {
-    font-size: 28px;
+    font-size: 24px;
   }
 `;
 

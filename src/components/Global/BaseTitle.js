@@ -3,6 +3,7 @@ import { tablet } from '../../devices'
 
 const BaseTitleGrid = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `
@@ -42,12 +43,27 @@ const BaseTitleOverlay = styled.span`
   }
 `
 
+const Subtitle = styled.p`
+  font-family: 'Prompt';
+  text-align: center;
+  position: relative;
+  margin: 0px;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--textColor);
 
-const BaseTitle = ({ children }) => {
+  @media screen and (min-width: ${tablet}) {
+    font-size: 16px;
+  }
+`
+
+const BaseTitle = ({ children, overlayText, subtitle }) => {
   return (
     <BaseTitleGrid>
-      <BaseTitleOverlay>QUEM SOMOS</BaseTitleOverlay>
+      <BaseTitleOverlay>{overlayText}</BaseTitleOverlay>
       <BaseTitleHeading>{children}</BaseTitleHeading>
+      <Subtitle>{subtitle}</Subtitle>
     </BaseTitleGrid>
   )
 }

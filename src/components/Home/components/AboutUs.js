@@ -68,7 +68,7 @@ const AboutUsParagraph = styled.p`
 const AboutUs = () => {
   return <>
     <BaseSection>
-      <BaseTitle>
+      <BaseTitle overlayText="QUEM SOMOS">
         New Resiquipe . <span>Quem Somos</span>
       </BaseTitle>
 

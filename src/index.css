@@ -3,7 +3,8 @@
 
 :root {
 
-  --textColor: #072448
+  --textColor: #072448;
+  --highlightColor: #1164E1;
 }
 
 body {
