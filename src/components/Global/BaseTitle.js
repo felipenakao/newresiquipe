@@ -33,13 +33,14 @@ const BaseTitleOverlay = styled.span`
   font-size: 36px;
   font-weight: 600;
   font-style: italic;
-  letter-spacing: 18px;
+  letter-spacing: 5px;
   color: #F7F7F7;
   position: absolute;
   text-align: center;
 
   @media screen and (min-width: ${tablet}) {
     font-size: 60px;
+    letter-spacing: 18px;
   }
 `
 

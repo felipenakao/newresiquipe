@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import BaseTitle from "../../Global/BaseTitle";
+import BaseTitle from "../../../Global/BaseTitle";
 import ServiceCard from "./ServiceCard";
-import { tablet, laptopL } from "../../../devices";
-import BaseSection from "../../Global/BaseSection";
+import { tablet, laptopL } from "../../../../devices";
+import BaseSection from "../../../Global/BaseSection";
 
 const ServiceLine = styled.span`
   width: 2px;

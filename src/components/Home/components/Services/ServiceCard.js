@@ -1,12 +1,12 @@
 import styled from "styled-components"
-import { tablet } from "../../../devices"
+import { tablet } from "../../../../devices"
 
 const ServiceCardContainer = styled.div`
   background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px;
+  margin: 30px 0px;
   box-shadow: 0px 0px 15px rgba(0,0,0,.05);
   border-radius: 15px;
   padding: 60px;
@@ -17,6 +17,7 @@ const ServiceCardContainer = styled.div`
 
   @media screen and (min-width: ${tablet}){
     max-width: 200px;
+    margin: 30px;
   }
 `
 

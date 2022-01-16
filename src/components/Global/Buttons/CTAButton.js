@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 
 const Anchor = styled.a`
@@ -7,7 +6,8 @@ const Anchor = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: 100px;
-  background: #032F6A;
+  // background: #032F6A;
+  /* background: #26D366; */
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
@@ -17,19 +17,20 @@ const Anchor = styled.a`
   margin: 0px 0px 15px;
 `
 
-const ShoppingCartButton = () => {
+const CTAButton = ({ href, title, icon, iconSize, children, bgColor }) => {
   return (
     <Anchor
-      href="https://newresiquipe.mercadoshops.com.br/"
+      style={{background: bgColor}}
+      href={href}
       rel="noopener noreferrer"
       target="_blank"
-      title="Ir para loja virtual"
+      title={title}
     >
-      <FontAwesomeIcon style={{ fontSize: 14 }} icon={faShoppingCart} />
+      <FontAwesomeIcon style={{ fontSize: iconSize || 20 }} icon={icon} />
       &nbsp;
-      Loja Virtual
+      {children}
     </Anchor>
   )
 }
 
-export default ShoppingCartButton
+export default CTAButton

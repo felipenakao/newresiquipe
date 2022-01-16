@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import WhatsAppButton from "../Buttons/WhatsAppButton";
 import MenuIconMobile from "./MenuIconMobile";
-import ShoppingCartButton from '../Buttons/ShoppingCartButton'
+import CTAButton from "../Buttons/CTAButton";
+
 import {
   TopMenu,
   Wrapper,
@@ -15,6 +15,9 @@ import {
   ButtonsGrid,
   SocialGrid,
 } from "./styles";
+
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,41 +33,55 @@ const Header = () => {
     <>
       <TopMenu>
         <Wrapper>
-        <SocialGrid>
-          <a
-            title="Youtube - New Resiquipe"
-            href="https://www.youtube.com/user/resiquipe"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img alt="Youtube" src="/assets/images/social/youtube.svg" />
-          </a>
+          <SocialGrid>
+            <a
+              title="Youtube - New Resiquipe"
+              href="https://www.youtube.com/user/resiquipe"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img alt="Youtube" src="/assets/images/social/youtube.svg" />
+            </a>
 
-          <a
-            title="Facebook - New Resiquipe"
-            href="https://www.facebook.com/newresiquipe.equipamentospararesinagem.3"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img alt="Facebook" src="/assets/images/social/facebook.svg" />
-          </a>
-        </SocialGrid>
+            <a
+              title="Facebook - New Resiquipe"
+              href="https://www.facebook.com/newresiquipe.equipamentospararesinagem.3"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img alt="Facebook" src="/assets/images/social/facebook.svg" />
+            </a>
+          </SocialGrid>
 
-        <LogoGrid>
-          <Logo
-            title="Logotipo New Resiquipe"
-            src="/assets/images/logo-new-resiquipe.png"
-          />
-        </LogoGrid>
+          <LogoGrid>
+            <Logo
+              title="Logotipo New Resiquipe"
+              src="/assets/images/logo-new-resiquipe.png"
+            />
+          </LogoGrid>
 
-        <ButtonsGrid>
-          <ShoppingCartButton />
+          <ButtonsGrid>
+            <CTAButton
+              iconSize={14}
+              bgColor="#032F6A"
+              title="Ir para loja virtual"
+              href="https://newresiquipe.mercadoshops.com.br/"
+              icon={faShoppingCart}
+            >
+              Loja Virtual
+            </CTAButton>
 
-          <WhatsAppButton />
-        </ButtonsGrid>
+            <CTAButton
+              bgColor="#26D366"
+              title="Fale conosco via WhatsApp"
+              href="https://wa.me/5511981637814"
+              icon={faWhatsapp}
+            >
+              Fale Conosco
+            </CTAButton>
+          </ButtonsGrid>
 
-        <MenuIconMobile isOpen={isOpen} setIsOpen={setIsOpen} />
-
+          <MenuIconMobile isOpen={isOpen} setIsOpen={setIsOpen} />
         </Wrapper>
       </TopMenu>
 
@@ -87,9 +104,24 @@ const Header = () => {
         </NavigationLinks>
 
         <MobileButtonsGrid>
-          <ShoppingCartButton />
+          <CTAButton
+            iconSize={14}
+            bgColor="#032F6A"
+            title="Ir para loja virtual"
+            href="https://newresiquipe.mercadoshops.com.br/"
+            icon={faShoppingCart}
+          >
+            Loja Virtual
+          </CTAButton>
 
-          <WhatsAppButton />
+          <CTAButton
+            bgColor="#26D366"
+            title="Fale conosco via WhatsApp"
+            href="https://wa.me/5511981637814"
+            icon={faWhatsapp}
+          >
+            Fale Conosco
+          </CTAButton>
         </MobileButtonsGrid>
 
         <MobileSocialGrid>
@@ -111,7 +143,6 @@ const Header = () => {
             <img alt="Facebook" src="/assets/images/social/facebook.svg" />
           </a>
         </MobileSocialGrid>
-
       </Navigation>
     </>
   );
