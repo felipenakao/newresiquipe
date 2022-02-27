@@ -7,7 +7,7 @@ import Product from './components/Product/Product'
 function App() {
   let routes = useRoutes([
     { path: '/', element: <Home /> },
-    { path: '/product', element: <Product /> }
+    { path: "/produto/:id", element: <Product /> },
   ]);
 
   return routes
