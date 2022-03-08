@@ -55,13 +55,31 @@ const CarouselContainer = styled.div`
     padding: 0px 30px;
   }
 
+  & .carousel .slide > div {
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+
+  & .carousel .slide > a > div:hover {
+    transform: scale(.98);
+    transition: all ease .3s;
+  }
+
+  & .carousel .slide > a > div:hover > img {
+    border: 1px solid #FECB00;
+    transition: box-shadow ease .3s;
+    box-shadow: 0px 0px 0px rgba(0,0,0, .9);
+  }
+  
+
   & .carousel .slider-wrapper {
     overflow: visible;
   }
   
   & .carousel.carousel-slider img {
     border-radius: 15px;
-    box-shadow: 0px 15px 15px rgba(0,0,0, .3);
+    transition: box-shadow ease .3s;
+    box-shadow: 0px 0px 15px rgba(0,0,0, .5);
   }
 
   & .carousel.carousel-slider {
@@ -152,21 +170,27 @@ const Featured = () => {
             showStatus={false}
             autoPlay
           >
+            <a href="produto/estufa-para-cura-22-bandejas">
             <div>
               <img src="/assets/images/slider/slider-01.jpg" />
             </div>
+            </a>
+            <a href="produto/maquina-dosadora-misturadora-com-tanques-para-resina-pu-new-resiquipe">
+
             <div>
               <img src="/assets/images/slider/slider-02.jpg" />
             </div>
+            </a>
+            <a href="produto/dosadora-cnc-para-resina-pu-2-eixos">
             <div>
               <img src="/assets/images/slider/slider-03.jpg" />
             </div>
-            <div>
+            </a>
+            <a href="produto/desgaseificador-para-resina-pu">
+            <div onClick={() => { window.location.href="" }}>
               <img src="/assets/images/slider/slider-04.jpg" />
             </div>
-            <div>
-              <img src="/assets/images/slider/slider-05.jpg" />
-            </div>
+            </a>
           </Carousel>
         </CarouselContainer>
 

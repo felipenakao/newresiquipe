@@ -14,6 +14,7 @@ const FilterGrid = styled.div`
 `;
 
 const FilterButton = styled.button`
+    transition: all ease .3s;
   font-family: "Prompt";
   border: 1px solid #efefef;
   border-radius: 100px;
@@ -31,22 +32,22 @@ const FilterButton = styled.button`
   }
 
   @media screen and (min-width: ${tablet}) {
-    margin: 0px 10px;
-    padding: 10px 15px;
+    margin: 5px;
+    padding: 7.5px 12.5px;
   }
 `;
 
-const Filter = ({ categories, isActive, setIsActive }) => {
+const Filter = ({ options, isActive, setIsActive }) => {
   return (
     <FilterGrid>
-      {categories.map((category) => (
+      {options.map((option) => (
         <FilterButton
-          className={isActive === category.id ? "active" : ""}
-          onClick={() => setIsActive(category.id)}
-          key={category.id}
-          value={category.id}
+          className={isActive === option.id ? "active" : ""}
+          onClick={() => setIsActive(option.id)}
+          key={option.id}
+          value={option.id}
         >
-          {category.label}
+          {option.label}
         </FilterButton>
       ))}
     </FilterGrid>

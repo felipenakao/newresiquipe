@@ -1,0 +1,25 @@
+{
+  "categories": [
+  { "id": "", "label": "Todas" },
+  { "id": "aplicadores", "label": "Aplicadores" },
+  { "id": "dosadores", "label": "Dosadores" },
+  { "id": "cura", "label": "Equipamentos para Cura" },
+  { "id": "desgazeificador", "label": "Desgazeificador" },
+  { "id": "cnc", "label": "CNC/Resina" },
+  { "id": "mesa", "label": "Mesa Térmica" }
+  ],
+
+  "production": [
+    { "id": "", "label": "Todas" },
+    { "id": "high", "label": "Alta Produção" },
+    { "id": "medium", "label": "Média Produção" },
+    { "id": "low", "label": "Baixa Produção" }
+  ],
+
+  "products": [
+    { "id": "", "label": "Todas" },
+    { "id": "high", "label": "Alta Produção" },
+    { "id": "medium", "label": "Média Produção" },
+    { "id": "low", "label": "Baixa Produção" }
+  ]
+}

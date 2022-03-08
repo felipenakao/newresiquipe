@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import styled from "styled-components"
+import { faArrowLeft, faHome } from "@fortawesome/free-solid-svg-icons";
 import { laptop, laptopL } from "../../devices";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import styled from "styled-components"
+
+import filters from '../../constants/filters.json'
 
 const Bar = styled.div`
   width: 100%;
@@ -29,18 +32,30 @@ const Wrapper = styled.div`
 `
 
 const Back = styled.div`
+  cursor: pointer;
 
-@media screen and (max-width: ${laptop}) {
+  &:hover {
+    color: #FECB00
+  }
+
+  @media screen and (max-width: ${laptop}) {
     display: none;
   }
 
 `
 
 const Content = styled.div`
-
+  & > * {
+    margin: 0px 5px;
+  }
 
   & a {
-    margin: 0px 5px
+    color: #fff;
+    text-decoration: none;
+    
+    &:hover {
+      color: #FECB00
+    }
   }
 
   & a.current {
@@ -49,25 +64,27 @@ const Content = styled.div`
 
 `
 
-const Breadcrumb = () => (
+const Breadcrumb = ({ category, title }) => {
+  const navigate = useNavigate();
+  return (
   <Bar>
     <Wrapper>
 
     
-    <Back><FontAwesomeIcon icon={faArrowLeft} /> Voltar</Back>
+    <Back onClick={() => navigate(-1)}><FontAwesomeIcon icon={faArrowLeft} /> Voltar</Back>
 
     <Content>
-      <a>Página Inicial</a>
+      <Link to="/"><FontAwesomeIcon icon={faHome} />&nbsp;<a>Página Inicial</a></Link>
       <span>/</span>
-      <a>Equipamentos</a>
+      <span>{filters.categories.find(item => item.id == category).label}</span>
       <span>/</span>
-      <a className="current">Estufa para a cura de resina</a>
+      <Link to={useLocation().pathname}><a className="current">{title}</a></Link>
     </Content>
 
 
     <div></div>
     </Wrapper>
   </Bar>
-)
+)}
 
 export default Breadcrumb

@@ -1,17 +1,189 @@
 import React from 'react'
-import Footer from '../Global/Footer';
-import BaseSection from '../Global/BaseSection';
-import Header from '../Global/Header/Header';
-import Breadcrumb from './Breadcrumb';
 
-const Product = () => (<>
+import styled from 'styled-components';
+import { useParams, useLocation } from 'react-router-dom';
+import { laptop, laptopL } from '../../devices';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+
+import Header from '../Global/Header/Header';
+import ImageGallery from 'react-image-gallery';
+import BaseSection from '../Global/BaseSection';
+import CTAButton from '../Global/Buttons/CTAButton';
+import Breadcrumb from './Breadcrumb';
+import Footer from '../Global/Footer';
+
+import "react-image-gallery/styles/css/image-gallery.css";
+import products from './products.json'
+import { useEffect } from 'react/cjs/react.development';
+
+const Wrapper = styled.div`
+  @media screen and (min-width: ${laptop}) {
+    max-width: ${laptopL};
+    margin: auto;
+  }
+`
+
+const ProductGrid = styled.div`
+  @media screen and (min-width: ${laptop}) {
+    display: flex;
+  }
+  
+`
+
+const ProductGallery = styled.div`
+  margin: 0 30px 30px;
+
+  & .image-gallery-thumbnail {
+    cursor: pointer
+  }
+
+  & .image-gallery-fullscreen-button {
+    right: 0;
+    top: 0;
+    bottom: auto
+  }
+
+  @media screen and (min-width: ${laptop}) {
+    margin: 0 30px;
+    max-width: 50%;
+  }
+`
+
+const ProductContent = styled.div`
+  color: #072448;
+  margin: 0 30px;
+
+  & h2 {
+    font-size: 32px;
+    margin-top: 0;
+  }
+
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+
+    & td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+  }
+
+  @media screen and (min-width: ${laptop}) {
+    max-width: 50%;
+  }
+`
+
+const ButtonGrid = styled.div`
+  margin: 30px 0px;
+`
+
+const ProductBottom = styled.div`
+  color: #072448;
+  margin-top: 30px;
+
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+
+    & td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+  }
+
+  & div {
+    margin: 0 30px;
+  }
+`
+
+const Product = () => {
+  let { id } = useParams();
+  const product = products.find(product => product.id == id)
+  const location = useLocation()
+  
+
+  const thumbnails = product.images.map(file => {
+    const image = `/assets/images/equipments/${id}/${file}`
+    return ({ original: image, thumbnail: image })
+  })
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return (<>
   <Header />
-  <Breadcrumb />
+  <Breadcrumb category={product.category} title={product.title} />
 
   <BaseSection>
-  Teste
+  <Wrapper>
+    <ProductGrid>
+      <ProductGallery>
+        <ImageGallery showNav={false} showPlayButton={false} items={thumbnails} />
+      </ProductGallery>
+
+      <ProductContent>
+        <h2>{product.title}</h2>
+
+        {product.description
+          ? <><p>{product.description}</p></>
+          : null}
+
+        <ButtonGrid>
+          <CTAButton
+            bgColor="rgb(3, 47, 106)"
+            hover="#1164E1"
+            href="https://wa.me/5511981637814"
+            icon={faWhatsapp}
+          >
+            Solicitar Equipamento
+          </CTAButton>
+        </ButtonGrid>
+
+        {product.contains && product.contains.length
+          ? <><h3>Contém:</h3>{product.contains.map(text => <p key={text}>{text}</p>)}</> 
+          : null}
+
+        {product.specifications_side && product.specifications_side.length
+          ? <div>
+              <h3>Especificações:</h3>
+              <table border="1">
+                {product.specifications_side.map(text => (
+                  <tr>
+                    <td>{text}</td>
+                  </tr>
+                ))}
+              </table>
+            </div>
+          : null}
+
+{product.guarantee
+          ? <><h3>Garantia:</h3> <p>{product.guarantee}</p></>
+          : null}
+
+      </ProductContent>
+    </ProductGrid>
+
+    <ProductBottom>
+
+    {product.specifications && product.specifications.length
+      ? 
+      <div>
+      <h3>Especificações:</h3>
+
+      <table border="1">
+
+      {product.specifications.map(text => (<tr>
+          <td>{text}</td>
+        </tr>))}
+      </table>
+      </div>
+      : null}
+
+    </ProductBottom>
+    </Wrapper>
   </BaseSection>
   <Footer />
-</>);
+</>)}
 
 export default Product

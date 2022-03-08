@@ -1,0 +1,294 @@
+[
+  {
+    "id": "dosadora-cnc-para-resina-pu-2-eixos",
+    "title": "Dosadora CNC para Resina Pu - 2 EIXOS",
+    "excerpt": "Especialmente desenvolvida para resina base PU",
+    "category": "cnc",
+    "guarantee": "6 meses",
+    "production": "high",
+    "description": "A dosadora CNC p/ resina PU é indicada para alta produção de etiquetas com formato geométrico (redondo, quadrado, retangular e oval) e também para etiquetas com formatos irregulares, tais como desenhos, protetores de tanque, estrelas, etc.",
+    "contains": [
+      "01 máquina dosadora com 02 tanques de 10 litros para 4kgs de cada componente (A/B)",
+      "01 mesa CNC",
+      "01 bomba de vácuo",
+      "01 cabeçote (opcional de 5, 10, 15 ou 20 bicos)",
+      "Software Resinador"
+    ],
+    "specifications": [
+      "Especialmente desenvolvida para resina base PU",
+      "Resina etiquetas e peças de desenho geométrico (redondos, quadrados, retangulares e ovais com 1 eixo)",
+      "Desenhos complexos: letras, números, peças com recortes (2 eixos)",
+      "Conjuntos de 5, 10, 15 ou 20 bicos que operam simultaneamente",
+      "Mistura automática de 2 componentes",
+      "CNC de 1 ou 2 eixos (X/Y)",
+      "Sistema de limpeza integrado",
+      "Sistema de vácuo para descontaminação da resina",
+      "Funcionamento elétrico 220 volts e pneumático com pressão de trabalho de 1 a 2 bar",
+      "Construído em alumínio e aço",
+      "Área útil: 500mm x 400mm",
+      "Ajuste de nível",
+      "Produção média de 300.000 etiquetas de 8mm por dia"
+    ],
+    "images": [
+      "01.jpg",
+      "02.jpg"
+    ] 
+  },
+
+  {
+    "id": "dosadora-cnc-para-resina-pu-1-eixo",
+    "title": "Dosadora CNC para Resina Pu - 1 EIXO",
+    "excerpt": "Especialmente desenvolvida para resina base PU",
+    "category": "cnc",
+    "guarantee": "6 meses",
+    "production": "high",
+    "description": "A dosadora CNC p/ resina PU é indicada para alta produção de etiquetas com formato geométrico (redondo, quadrado, retangular e oval) e também para etiquetas com formatos irregulares, tais como desenhos, protetores de tanque, estrelas, etc.",
+    "contains": [
+      "01 máquina dosadora com 02 tanques de 10 litros para 4kgs de cada componente (A/B)",
+      "01 mesa CNC",
+      "01 bomba de vácuo",
+      "01 cabeçote (opcional de 5, 10, 15 ou 20 bicos)",
+      "Software Resinador"
+    ],
+    "specifications": [
+      "Especialmente desenvolvida para resina base PU",
+      "Resina etiquetas e peças de desenho geométrico (redondos, quadrados, retangulares e ovais com 1 eixo)",
+      "Conjuntos de 5, 10, 15 ou 20 bicos que operam simultaneamente",
+      "Mistura automática de 2 componentes",
+      "CNC de 1 eixo (X)",
+      "Sistema de limpeza integrado",
+      "Sistema de vácuo para descontaminação da resina",
+      "Funcionamento elétrico 220 volts e pneumático com pressão de trabalho de 1 a 2 bar",
+      "Construído em alumínio e aço",
+      "Área útil: 500mm x 400mm",
+      "Ajuste de nível",
+      "Produção média de 300.000 etiquetas de 8mm por dia"
+    ],
+    "images": [
+      "01.jpg",
+      "02.jpg"
+    ] 
+  },
+
+  {
+    "id": "mesa-termica",
+    "title": "Mesa Térmica Com Controle De Temperatura para Resinagem",
+    "excerpt": "Para resinagem de peças pequenas, médias e grandes",
+    "category": "mesa",
+    "guarantee": "6 meses",
+    "production": "medium",
+    "description": "A mesa térmica é indicada para resinagem de peças pequenas, médias e grandes. Facilita a aplicação da resina fazendo com que ela se espalhe de forma mais uniforme.",
+    "contains": [],
+    "specifications_side": [
+      "Medida: (C) 1,20 x (L) 60cm x (A) 100cm",
+      "Vidro temperado de 6mm",
+      "Controle de temperatura de 0° a 90°c",
+      "Ajuste de nível",
+      "Estrutura em perfil de alumínio",
+      "220V"
+    ],
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "05.jpg",
+      "06.jpg"
+    ]
+  },
+
+  {
+    "id": "estufa-para-cura-11-bandejas",
+    "title": "Estufa Para Cura - 11 bandejas",
+    "excerpt": "Estufa com vidros temperados para cura de resina.",
+    "category": "cura",
+    "guarantee": "6 meses",
+    "production": "low",
+    "description": "Estufa com vidros temperados para cura de resina. A estufa térmica é indicada para acelerar o processo de cura da resina ou secagem de diversos produtos.",
+    "contains": [],
+    "specifications_side" : [
+      "220V",
+      "Controle de temperatura de 0° a 90°c",
+      "Vidros temperados de 6mm na medida de 50cm x 40cm",
+      "Ajuste de nível",
+      "Estrutura em perfíl de alumínio"
+    ],
+    "specifications": [],
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg"
+    ]
+  },
+
+  {
+    "id": "estufa-para-cura-22-bandejas",
+    "title": "Estufa Para Cura - 22 bandejas",
+    "excerpt": "Estufa com vidros temperados para cura de resina.",
+    "category": "cura",
+    "guarantee": "6 meses",
+    "production": "medium",
+    "description": "Estufa com vidros temperados para cura de resina. A estufa térmica é indicada para acelerar o processo de cura da resina ou secagem de diversos produtos.",
+    "contains": [],
+    "specifications_side" : [
+      "220V",
+      "Controle de temperatura de 0° a 90°c",
+      "Vidros temperados de 6mm na medida de 50cm x 40cm",
+      "Ajuste de nível",
+      "Estrutura em perfíl de alumínio"
+    ],
+    "specifications": [],
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg"
+    ]
+  },
+
+  {
+    "id": "maquina-dosadora-misturadora-com-tanques-para-resina-pu-new-resiquipe",
+    "title": "Máquina Dosadora Misturadora C/ Tanques Para Resina PU (New Resiquipe)",
+    "excerpt": "Máquina Dosadora para resina PU com tanques.",
+    "category": "dosadores",
+    "guarantee": "6 meses",
+    "production": "high",
+    "description": "A máquina dosadora para resina PU com tanques é indicada para trabalhos de média produção em peças acima de 15mm.",
+    "contains": [],
+    "specifications_side" : [
+      "220V",
+      "02 Tanques com capacidade de 4 kgs de cada componente",
+      "Sistema de limpeza integrado",
+      "Sistema de vácuo integrado",
+      "Painel digital New Resiquipe para aplicação manual, automática e automática com intervalo"
+    ],
+    "specifications": [],
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg"
+    ]
+  },
+
+  {
+    "id": "maquina-dosadora-misturadora-com-tanques-para-resina-pu-importada",
+    "title": "Máquina Dosadora Misturadora C/ Tanques Para Resina PU (Importada)",
+    "excerpt": "Máquina Dosadora para resina PU com tanques.",
+    "category": "dosadores",
+    "guarantee": "6 meses",
+    "production": "high",
+    "description": "A máquina dosadora para resina PU com tanques é indicada para trabalhos de média produção em peças acima de 15mm.",
+    "contains": [],
+    "specifications_side" : [
+      "220V",
+      "02 Tanques com capacidade de 4 kgs de cada componente",
+      "Sistema de limpeza integrado",
+      "Sistema de vácuo integrado",
+      "Painel digital New Resiquipe para aplicação manual, automática e automática com intervalo"
+    ],
+    "specifications": [],
+    "images": [
+      "01.jpg",
+      "02.jpg"
+    ]
+  },
+
+  {
+    "id": "desgaseificador-para-resina-pu",
+    "title": "Desgaseificador Para Resina Pu / Epóxi / Silicone e Outros",
+    "excerpt": "Retire bolhas e umidade dos produtos através do vácuo.",
+    "category": "desgazeificador",
+    "guarantee": "6 meses",
+    "production": "low",
+    "description": "Retire bolhas e umidade dos produtos através do vácuo. Ideal para resinas PU/Epoxy ou produtos que necessitem a retirada de umidade.",
+    "contains": [],
+    "specifications_side" : [],
+    "specifications": [],
+    "images": [
+      "01.jpg",
+      "02.jpg"
+    ]
+  },
+
+  {
+    "id": "aplicador-para-resina-epoxi-pu-plastisol",
+    "title": "Aplicador Para Resina Epóxi / Pu / Plastisol",
+    "excerpt": "Pode ser utilizado em qualquer pequeno espaço de forma simples e fácil de manusear.",
+    "category": "aplicadores",
+    "guarantee": "6 meses",
+    "production": "low",
+    "description": "O aplicador p/ resina PU/Epoxy é indicado para resinagem de etiquetas, adesivos, chaveiros, botons, etc. Com sua forma compacta, pode ser utilizado em qualquer pequeno espaço de forma simples e fácil de manusear.",
+    "contains": [
+      "01 aplicador",
+      "01 acionador",
+      "02 seringas de 60ml",
+      "01 kit de agulhas",
+      "01 kit de mangueiras",
+      "* Necessita de compressor de ar de no mínimo 26 litros/120psi"
+
+    ],
+    "specifications_side" : [],
+    "specifications": [
+      "Não necessita de energia, apenas de um compressor de ar comprimido",
+      "Regulagem de pressão",
+      "Acionador manual"
+    ],
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg"
+    ]
+  },
+
+  {
+    "id": "dosador-para-resina-pu-epoxy-com-seringa-importada",
+    "title": "Dosador para resina PU/EPOXY (com seringa) - Importada",
+    "excerpt": "Máquina para resinagem de etiquetas de fácil utilização.",
+    "category": "dosadores",
+    "guarantee": "6 meses",
+    "production": "low",
+    "description": "Máquina para resinagem de etiquetas de fácil utilização.",
+    "contains": [],
+    "specifications_side" : [
+      "Cabo de acionamento da máquina",
+      "Botão liga/desliga com luz indicadora",
+      "Painel digital para programar a dose de resina",
+      "Saída de ar para o cabeçote do aplicador",
+      "Regulador de pressão (saída da resina)",
+      "Manômetro para o controle de pressão do ar"
+    ],
+    "specifications": [],
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg"
+    ]
+  },
+
+  {
+    "id": "dosador-para-resina-pu-epoxy-com-seringa-new-resiquipe",
+    "title": "Dosador para resina PU/EPOXY (com seringa) - New Resiquipe",
+    "excerpt": "Indicado para aplicação: Resina Epóxi - Resina base PU (poliuretano).",
+    "category": "dosadores",
+    "guarantee": "6 meses",
+    "production": "low",
+    "description": "Máquina para resinagem de etiquetas de fácil utilização indicado para aplicação: Resina Epóxi - Resina base PU (poliuretano).",
+    "contains": [],
+    "specifications_side" : [
+      "Botão de acionamento de alta precisão.",
+      "Aplicação em Etiquetas Recortadas no formato letras.",
+      "Funcionamento pneuomático (min. 1bar - máx. 8bar).",
+      "Confeccionado em aço.",
+      "Pintura epóxi de alta resistência."
+    ],
+    "specifications": [],
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg"
+    ]
+  }
+]
+

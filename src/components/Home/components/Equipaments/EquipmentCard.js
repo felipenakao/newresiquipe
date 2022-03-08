@@ -39,6 +39,7 @@ const EquipmentCardContainer = styled.div`
 `;
 
 const EquipmentImage = styled.img`
+max-width: 280px;
   height: 200px;
   object-fit: contain;
   margin-bottom: 15px;
@@ -51,7 +52,7 @@ const EquipmentTitle = styled.h3`
 `;
 
 const EquipmentParagraph = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   margin: 0px;
 `;
 
@@ -83,13 +84,39 @@ const EquipmentHover = styled.div`
     }
 `;
 
+const EquipmentBadge = styled.span`
+  background: var(--highlightColor);
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border-radius: 100px;
+  color: #fff;
+    font-size: 12px;
+  padding: 2.5px 7.5px;
+`
+
 
 const EquipmentHoverLabel = styled.p`
   font-family: 'Prompt';
   font-weight: bold;
 `
 
-const EquipmentCard = ({ children, title, src, category }) => {
+const productionType = {
+  "high": {
+    text: 'Alta Produção',
+    color: 'rgb(221, 51, 90)'
+  },
+  "medium": {
+    text: 'Média Produção',
+    color: '#1164E1'
+  },
+  "low": {
+    text: 'Baixa Produção',
+    color: 'rgb(38, 211, 102)'
+  }
+}
+
+const EquipmentCard = ({ children, title, src, category, production }) => {
   return (
     <EquipmentCardContainer title={title}>
 
@@ -103,8 +130,10 @@ const EquipmentCard = ({ children, title, src, category }) => {
 
       <EquipmentHover>
         <EquipamentHoverIcon src="/assets/images/equipments/ver-mais.svg" />
-        <EquipmentHoverLabel>VER MAIS</EquipmentHoverLabel>
+        <EquipmentHoverLabel>VER DETALHES</EquipmentHoverLabel>
       </EquipmentHover>
+
+      {productionType[production].text ? <EquipmentBadge style={{ background: productionType[production].color }}>{productionType[production].text}</EquipmentBadge> : null}
 
     </EquipmentCardContainer>
   );

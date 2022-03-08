@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { faFilePdf, faFilter } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { tablet, laptopL } from "../../../../devices";
+import { tablet, laptopL, laptop } from "../../../../devices";
 
 import BaseSection from "../../../Global/BaseSection";
 import BaseTitle from "../../../Global/BaseTitle";
@@ -9,114 +9,126 @@ import CTAButton from "../../../Global/Buttons/CTAButton";
 import Filter from "./Filter";
 import EquipmentCard from "./EquipmentCard";
 
+import products from '../../../../components/Product/products.json'
+import filters from '../../../../constants/filters.json'
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 const ActionsBar = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  margin: 30px 0px;
+  margin: 30px auto;
+
+  & > div {
+    text-align: center;
+    padding: 15px 10px 0px ;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: inset #f1f1f1 0px 0px 5px;
+    background: #f8f8f8;
+  }
+
+  & span {
+    margin: 10px;
+    color: var(--textColor);
+    font-family: Prompt;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400
+  }
+
+  @media screen and (min-width: ${tablet}){
+    max-width: ${laptopL};
+
+  }
 `;
 
 const EquipmentsGrid = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: ${laptopL};
   flex-wrap: wrap;
+  margin: 30px auto;
 
-@media screen and (min-width: ${tablet}){
-  flex-direction: row;
-}
+  @media screen and (min-width: ${tablet}){
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  & a {
+    text-decoration: none;
+  }
 
 `;
 
+const CatalogGrid = styled.div`
+  text-align: center;
+  display: none;
+`
+
 const Equipaments = () => {
-  const [isActive, setIsActive] = useState(0);
+  const [isActive, setIsActive] = useState('');
+  const [isProductionActive, setProductionActive] = useState('');
 
-  const categories = [
-    { id: 0, label: "Ver Todos" },
-    { id: 1, label: "Aplicadores" },
-    { id: 2, label: "Dosadores" },
-    { id: 3, label: "Equipamentos para Cura" },
-    { id: 4, label: "Desgazeificador" },
-    { id: 5, label: "CNC/Resina" },
-  ];
-
-  const equipments = [
-    {
-      id: 0,
-      title: "Estufa para cura de resina",
-      category: 3,
-      text: "Com controle de temperatura, 11 ou 12 bandejas de vidro temperado",
-      image: "/assets/images/equipments/estufa-para-cura-de-resina.svg",
-    },
-    {
-      id: 1,
-      title: "Máquina dosadora CNC",
-      category: 5,
-      text: "Máquina dosadora CNC para resina PU",
-      image: "/assets/images/equipments/maquina-dosadora-cnc.svg",
-    },
-    {
-      id: 2,
-      title: "Dosador com Tanques",
-      category: 2,
-      text: "Dosador / Misturador com tanque para Resina PU",
-      image: "/assets/images/equipments/dosador-com-tanques.svg",
-    },
-    {
-      id: 3,
-      title: "Desgaseificador para Resina PU",
-      category: 4,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "/assets/images/equipments/desgaseificador-para-resina-pu.svg",
-    },
-    {
-      id: 4,
-      title: "Mesa térmica para resinagem",
-      category: 3,
-      text: "Mesa de tamanho 1200 x 600 mm",
-      image: "/assets/images/equipments/mesa-termica-para-resinagem.svg",
-    },
-  ];
+  const filtered = products.filter(product => ((product.production == isProductionActive || isProductionActive == '') && (product.category == isActive || isActive == '')))
 
   return (
-    <BaseSection>
+    <BaseSection id="equipamentos">
+        <CatalogGrid>
+          <CTAButton
+            iconSize={14}
+            bgColor="#DD335A"
+            title="Baixar catálogo em .PDF"
+            href="#"
+            icon={faFilePdf}
+          >
+            Baixar Catálogo
+          </CTAButton>
+        </CatalogGrid>
       <BaseTitle
         overlayText="EQUIPAMENTOS"
-        subtitle="Veja os detalhes de cada equipamento ou se preferir, baixe nosso catálogo:"
+        subtitle="Equipamentos para cada tipo de produção:"
       >
         Confira nossos <span>Equipamentos</span>
       </BaseTitle>
 
       <ActionsBar>
-        <CTAButton
-          iconSize={14}
-          bgColor="#DD335A"
-          title="Baixar catálogo em .PDF"
-          href="#"
-          icon={faFilePdf}
-        >
-          Baixar Catálogo
-        </CTAButton>
-
-        <Filter
-          isActive={isActive}
-          setIsActive={setIsActive}
-          categories={categories}
-        />
+        <div>
+          <span><FontAwesomeIcon icon={faFilter} /> Filtrar por Categorias:</span>
+          <Filter
+            isActive={isActive}
+            setIsActive={setIsActive}
+            options={filters.categories}
+          />
+        </div>
+        <div>
+          <span><FontAwesomeIcon icon={faFilter} />  Filtrar por Demanda:</span>
+          <Filter
+            isActive={isProductionActive}
+            setIsActive={setProductionActive}
+            options={filters.production}
+          />
+        </div>
+      </ActionsBar>
 
         <EquipmentsGrid>
-          {equipments.filter(equipment => ((isActive === 0) || (equipment.category === isActive))).map(({ id, title, category, image, text }) => (
-            <EquipmentCard
-              key={id}
-              src={image}
-              title={title}
-              category={categories.find(({ id }) => category === id).label}
-            >
-              {text}
-            </EquipmentCard>
-          ))}
+          {filtered.length ? filtered.map(({ id, title, category, excerpt, production }) => (
+            <Link to={`/produto/${id}`}>
+              <EquipmentCard
+                key={id}
+                src={`/assets/images/equipments/${id}/thumbnail.jpg`}
+                title={title}
+                category={filters.categories.find(({ id }) => category == id).label}
+                production={production}
+              >
+                {excerpt}
+              </EquipmentCard>
+            </Link>
+          )).sort(() => Math.random() - 0.5) : <p style={{ margin: '90px 0px 30px' }}>Nenhum equipamento encontrado...</p>}
         </EquipmentsGrid>
-      </ActionsBar>
+
     </BaseSection>
   );
 };
