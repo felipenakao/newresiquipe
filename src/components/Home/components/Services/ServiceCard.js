@@ -15,8 +15,8 @@ const ServiceCardContainer = styled.div`
   font-family: 'Prompt';
   position: relative;
 
-  @media screen and (min-width: ${tablet}){
-    max-width: 200px;
+  @media screen and (min-width: ${tablet}) {
+    max-width: 250px;
     margin: 30px;
   }
 `
@@ -32,7 +32,7 @@ const ServiceTitle = styled.h3`
 `
 
 const ServiceParagraph = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   margin: 0px;
 `
 

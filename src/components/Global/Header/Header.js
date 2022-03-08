@@ -18,15 +18,17 @@ import {
 
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuLabels = [
-    { label: "Quem Somos", href: "#" },
-    { label: "Serviços", href: "#" },
-    { label: "Equipamentos", href: "#" },
-    { label: "Central de Vídeos", href: "#" },
-    { label: "Contato & Localização", href: "#" },
+    { label: "Página Inicial", href: "/" },
+    { label: "Quem Somos", href: "/#quem-somos" },
+    { label: "Serviços", href: "/#servicos" },
+    { label: "Todos os Equipamentos", href: "/#equipamentos" },
+    { label: "Central de Vídeos", href: "/#videos" },
+    { label: "Contato & Localização", href: "/#contato" },
   ];
 
   return (
@@ -51,13 +53,24 @@ const Header = () => {
             >
               <img alt="Facebook" src="/assets/images/social/facebook.svg" />
             </a>
+
+            <a
+              title="Instagram - New Resiquipe"
+              href="http://instagram.com/newresiquipe"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img alt="Facebook" src="/assets/images/social/instagram.svg" />
+            </a>
           </SocialGrid>
 
           <LogoGrid>
+            <Link to="/">
             <Logo
               title="Logotipo New Resiquipe"
               src="/assets/images/logo-new-resiquipe.png"
             />
+            </Link>
           </LogoGrid>
 
           <ButtonsGrid>

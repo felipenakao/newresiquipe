@@ -35,7 +35,7 @@ const CardsGrid = styled.div`
 
 const Services = () => {
   return (
-    <BaseSection>
+    <BaseSection id="servicos">
       <BaseTitle overlayText="SERVIÇOS" subtitle="Nossos profissionais estão sempre prontos para lhe atender.">
         Nossos <span>Serviços</span>
       </BaseTitle>
@@ -47,24 +47,21 @@ const Services = () => {
           title="Equipamentos sob medida"
           icon="/assets/images/services/equipamentos.svg"
         >
-          Utilize a nossa experiência na fabricação de equipamentos para
-          resinagem.
+          Utilize a nossa experiência na fabricação de equipamentos para resinagem.
         </ServiceCard>
 
         <ServiceCard
           title="Treinamento"
           icon="/assets/images/services/treinamento.svg"
         >
-          Os melhores profissionais do mercado lhe trarão todo o conhecimento
-          para que o seu negócio tenha mais êxito.
+          Sempre procurando lhes oferecer todo o conhecimento para que o seu negócio tenha mais êxito.
         </ServiceCard>
 
         <ServiceCard
           title="Suporte Técnico"
           icon="/assets/images/services/suporte.svg"
         >
-          Nossos técnicos estão a sua disposição para esclarecer dúvidas e
-          informações.
+          Nossos técnicos estão a sua disposição para esclarecer dúvidas e informações.
         </ServiceCard>
       </CardsGrid>
     </BaseSection>

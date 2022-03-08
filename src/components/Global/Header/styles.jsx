@@ -94,7 +94,11 @@ export const NavigationLinks = styled.ul`
     text-decoration: none;
     color: #032F6A;
     font-family: Prompt;
-    font-weight: 600;  
+    font-weight: 500;  
+
+    &:hover {
+      color: #1164E1
+    }
   }
 
   @media screen and (min-width: ${laptop}) {

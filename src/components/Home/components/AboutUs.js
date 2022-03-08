@@ -48,13 +48,13 @@ const AboutUsTextGrid = styled.div`
   margin: 30px 0px;
 
   @media screen and (min-width: ${tablet}) {
-    margin: 60px;
+    margin: 60px 30px;
   }
 `
 
 const AboutUsParagraph = styled.p`
   font-family: 'Prompt';
-  font-size: 12px;
+  font-size: 14px;
   color: var(--textColor);
   text-align: center;
   margin: 30px 0px;
@@ -67,7 +67,7 @@ const AboutUsParagraph = styled.p`
 
 const AboutUs = () => {
   return <>
-    <BaseSection>
+    <BaseSection id="quem-somos">
       <BaseTitle overlayText="QUEM SOMOS">
         New Resiquipe . <span>Quem Somos</span>
       </BaseTitle>
@@ -93,7 +93,15 @@ const AboutUs = () => {
             Nossos técnicos estão sempre a disposição para orientar, conseguindo uma boa performance dos equipamentos e resinas.
           </AboutUsParagraph>
           <AboutUsParagraph>
-            Recentemente lançou no mercado podutos com tecnologia de ponta para aplicação de resinas de Poliuretano (PU), revolucionando com o Desgaseificador para Resina PU, que possibilita a utilização desta resina manualmente.
+            O objetivo da New Resiquipe é colocar a disposição do mercado sua vasta experiência na produção de máquinas e equipamentos para resinagem, visando o aumento da produtividade com excelente qualidade de trabalho.
+          </AboutUsParagraph>
+
+          <AboutUsParagraph>
+            Estamos a sua disposição para maiores informações ou aguardando a sua visita para um café. Temos um show room pronto para receber a sua visita e avaliar a sua necessidade cuidadosamente.
+          </AboutUsParagraph>
+
+          <AboutUsParagraph>
+            Confira as novidades!
           </AboutUsParagraph>
         </AboutUsTextGrid>
       </AboutUsContainer>

@@ -51,7 +51,7 @@ const Subtitle = styled.p`
   margin: 0px;
   font-weight: 300;
   font-style: italic;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--textColor);
 
   @media screen and (min-width: ${tablet}) {

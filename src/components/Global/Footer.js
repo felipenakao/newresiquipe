@@ -45,11 +45,11 @@ const FooterTitle = styled.h2`
 `;
 
 const FooterSubtitle = styled.h3`
-  font-size: 12px;
+  font-size: 14px;
 `;
 
 const FooterText = styled.p`
-  font-size: 12px;
+  font-size: 14px;
 `;
 
 const LinksGrid = styled.div`
@@ -60,7 +60,13 @@ const LinksGrid = styled.div`
 `;
 
 const ButtonsGrid = styled.div`
-margin: 15px 0px;
+  margin: 15px 0px;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    margin: 0px 0px 15px
+  }
 `;
 
 const FooterBottom = styled.div`
@@ -89,7 +95,7 @@ const FooterLogo = styled.img`
   }
 `;
 const Copyright = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   margin: 15px 0px 30px;
 `;
 const FooterSocialGrid = styled.div`
@@ -98,11 +104,15 @@ const FooterSocialGrid = styled.div`
   & a {
     margin: 0px 5px;
   }
+
+  & img {
+    width: 36px;
+  }
 `;
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer id="contato">
       <FooterContent>
         <MapGrid>
           <iframe
@@ -132,23 +142,14 @@ const Footer = () => {
 
         <LinksGrid>
           <FooterTitle>Links Rápidos</FooterTitle>
-          <a href=""><FooterText>Quem Somos</FooterText></a>
-          <a href=""><FooterText>Serviços</FooterText></a>
-          <a href=""><FooterText>Equipamentos</FooterText></a>
-          <a href=""><FooterText>Central de Vídeos</FooterText></a>
+          <a href="#quem-somos"><FooterText>Quem Somos</FooterText></a>
+          <a href="#servicos"><FooterText>Serviços</FooterText></a>
+          <a href="#equipamentos"><FooterText>Equipamentos</FooterText></a>
+          <a href="#videos"><FooterText>Central de Vídeos</FooterText></a>
         </LinksGrid>
 
         <ButtonsGrid>
-        <CTAButton
-              iconSize={14}
-              bgColor="#032F6A"
-              title="Ir para loja virtual"
-              href="https://newresiquipe.mercadoshops.com.br/"
-              icon={faShoppingCart}
-            >
-              Loja Virtual
-            </CTAButton>
-
+        <div>
             <CTAButton
               bgColor="#26D366"
               title="Fale conosco via WhatsApp"
@@ -157,8 +158,21 @@ const Footer = () => {
             >
               Fale Conosco
             </CTAButton>
+            </div>
+          <div>
+          <CTAButton
+              iconSize={14}
+              bgColor="#032F6A"
+              title="Ir para loja virtual"
+              href="https://newresiquipe.mercadoshops.com.br/"
+              icon={faShoppingCart}
+            >
+              Loja Virtual
+            </CTAButton>
+          </div>
 
-            <CTAButton
+            <div>
+            {/* <CTAButton
           iconSize={14}
           bgColor="#DD335A"
           title="Baixar catálogo em .PDF"
@@ -166,7 +180,8 @@ const Footer = () => {
           icon={faFilePdf}
         >
           Baixar Catálogo
-        </CTAButton>
+        </CTAButton> */}
+        </div>
 
 
         </ButtonsGrid>
@@ -175,7 +190,7 @@ const Footer = () => {
 
         <FooterLogo src="/assets/images/footer/logo-footer@2x.png" />
 
-        <Copyright>New Resiquipe Importação/Exportação e Comercio de Maquinas LTDA | Todos os direitos reservados</Copyright>
+        <Copyright>New Resiquipe Imp/Exp e Com. de Máquinas Ltda | CNPJ: 08.014.083/0001-80 | Todos os direitos reservados</Copyright>
 
         <FooterSocialGrid>
           <a
@@ -194,6 +209,15 @@ const Footer = () => {
               rel="noreferrer"
             >
               <img alt="Facebook" src="/assets/images/social/facebook.svg" />
+            </a>
+
+            <a
+              title="Instagram - New Resiquipe"
+              href="https://www.instagram.com/newresiquipe/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img alt="Facebook" src="/assets/images/social/instagram.svg" />
             </a>
         </FooterSocialGrid>
       </FooterBottom>

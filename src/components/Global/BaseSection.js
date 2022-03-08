@@ -5,13 +5,13 @@ const BaseSectionGrid = styled.section`
   padding: 60px 30px;
 
   @media screen and (min-width: ${tablet}) {
-    padding: 120px 30px;
+    padding: 90px 30px;
   }
 `
 
-const BaseSection = ({ children }) => {
+const BaseSection = ({ children, id }) => {
   return (
-    <BaseSectionGrid>
+    <BaseSectionGrid id={id}>
       {children}
     </BaseSectionGrid>
   )

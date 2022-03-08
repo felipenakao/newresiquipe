@@ -31,7 +31,7 @@ const videos = [
 const Videos = () => {
   const [isOpen, setOpen] = useState('');
   return (
-    <BaseSection>
+    <BaseSection id="videos">
       <BaseTitle
         overlayText="Vídeos"
         subtitle="Aqui você pode assistir uma demonstração dos nossos equipamentos."

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
 
 const Anchor = styled.a`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 100px;
@@ -14,12 +14,16 @@ const Anchor = styled.a`
   font-family: Prompt;
   font-size: 14px;
   font-weight: 500;
-  margin: 0px 0px 15px;
+
+  &:hover {
+    background: ${props => props.hover || ''}!important;
+  }
 `
 
-const CTAButton = ({ href, title, icon, iconSize, children, bgColor }) => {
+const CTAButton = ({ href, title, icon, iconSize, children, bgColor, hover }) => {
   return (
     <Anchor
+      hover={hover}
       style={{background: bgColor}}
       href={href}
       rel="noopener noreferrer"
