@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import styled from 'styled-components';
 import { useParams, useLocation } from 'react-router-dom';
@@ -14,7 +14,6 @@ import Footer from '../Global/Footer';
 
 import "react-image-gallery/styles/css/image-gallery.css";
 import products from './products.json'
-import { useEffect } from 'react/cjs/react.development';
 
 const Wrapper = styled.div`
   @media screen and (min-width: ${laptop}) {
