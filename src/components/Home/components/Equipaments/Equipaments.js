@@ -96,19 +96,20 @@ const Equipaments = () => {
 
       <ActionsBar>
         <div>
-          <span><FontAwesomeIcon icon={faFilter} /> Filtrar por Categorias:</span>
-          <Filter
-            isActive={isActive}
-            setIsActive={setIsActive}
-            options={filters.categories}
-          />
-        </div>
-        <div>
           <span><FontAwesomeIcon icon={faFilter} />  Filtrar por Demanda:</span>
           <Filter
             isActive={isProductionActive}
             setIsActive={setProductionActive}
             options={filters.production}
+          />
+        </div>
+
+        <div>
+          <span><FontAwesomeIcon icon={faFilter} /> Filtrar por Categorias:</span>
+          <Filter
+            isActive={isActive}
+            setIsActive={setIsActive}
+            options={filters.categories}
           />
         </div>
       </ActionsBar>

@@ -78,7 +78,7 @@ const Header = () => {
               iconSize={14}
               bgColor="#032F6A"
               title="Ir para loja virtual"
-              href="https://newresiquipe.mercadoshops.com.br/"
+              href="https://newresiquipe.wixsite.com/newresiquipe"
               icon={faShoppingCart}
             >
               Loja Virtual
@@ -121,7 +121,7 @@ const Header = () => {
             iconSize={14}
             bgColor="#032F6A"
             title="Ir para loja virtual"
-            href="https://newresiquipe.mercadoshops.com.br/"
+            href="https://newresiquipe.wixsite.com/newresiquipe"
             icon={faShoppingCart}
           >
             Loja Virtual

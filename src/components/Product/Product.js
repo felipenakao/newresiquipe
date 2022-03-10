@@ -97,9 +97,9 @@ const ProductBottom = styled.div`
 
 const Product = () => {
   let { id } = useParams();
+
   const product = products.find(product => product.id == id)
   const location = useLocation()
-  
 
   const thumbnails = product.images.map(file => {
     const image = `/assets/images/equipments/${id}/${file}`
