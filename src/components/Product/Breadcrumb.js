@@ -74,11 +74,11 @@ const Breadcrumb = ({ category, title }) => {
     <Back onClick={() => navigate(-1)}><FontAwesomeIcon icon={faArrowLeft} /> Voltar</Back>
 
     <Content>
-      <Link to="/"><FontAwesomeIcon icon={faHome} />&nbsp;<a>Página Inicial</a></Link>
+      <Link to="/"><FontAwesomeIcon icon={faHome} />&nbsp;Página Inicial</Link>
       <span>/</span>
       <span>{filters.categories.find(item => item.id == category).label}</span>
       <span>/</span>
-      <Link to={useLocation().pathname}><a className="current">{title}</a></Link>
+      <Link className="current" to={useLocation().pathname}>{title}</Link>
     </Content>
 
 

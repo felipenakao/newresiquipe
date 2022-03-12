@@ -147,11 +147,13 @@ const Product = () => {
           ? <div>
               <h3>Especificações:</h3>
               <table border="1">
+                <tbody>
                 {product.specifications_side.map(text => (
-                  <tr>
+                  <tr key={text}>
                     <td>{text}</td>
                   </tr>
                 ))}
+                </tbody>
               </table>
             </div>
           : null}
@@ -171,10 +173,11 @@ const Product = () => {
       <h3>Especificações:</h3>
 
       <table border="1">
-
+<tbody>
       {product.specifications.map(text => (<tr>
           <td>{text}</td>
         </tr>))}
+        </tbody>
       </table>
       </div>
       : null}

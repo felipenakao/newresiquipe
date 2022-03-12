@@ -116,7 +116,7 @@ const Equipaments = () => {
 
         <EquipmentsGrid>
           {filtered.length ? filtered.map(({ id, title, category, excerpt, production }) => (
-            <Link to={`/produto/${id}`}>
+            <Link key={id} to={`/produto/${id}`}>
               <EquipmentCard
                 key={id}
                 src={`/assets/images/equipments/${id}/thumbnail.jpg`}

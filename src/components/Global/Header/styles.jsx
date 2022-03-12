@@ -58,7 +58,7 @@ export const Navigation = styled.nav`
   background: #FECB00;
   opacity: ${props => props.show ? '1' : '0'};
   width: calc(100% - 60px);
-  position: fixed;
+  position: sticky;
   padding: 45px 30px;
   transition-property: opacity, height;
   transition-duration: .5s;
@@ -68,6 +68,7 @@ export const Navigation = styled.nav`
   justify-content: center;
   overflow: hidden;
   z-index: 8;
+  top: 0px;
 
   @media screen and (min-width: ${laptop}) {
     padding: 15px;
@@ -75,7 +76,8 @@ export const Navigation = styled.nav`
     width: calc(100% - 30px);
     opacity: 1;
     transition: none;
-    position: static;
+    position: sticky;
+    top: 0px;
   }
 `;
 
