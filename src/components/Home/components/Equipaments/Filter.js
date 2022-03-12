@@ -14,7 +14,7 @@ const FilterGrid = styled.div`
 `;
 
 const FilterButton = styled.button`
-    transition: all ease .3s;
+  transition: all ease .3s;
   font-family: "Prompt";
   border: 1px solid #efefef;
   border-radius: 100px;

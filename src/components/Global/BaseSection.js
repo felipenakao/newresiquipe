@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { tablet } from '../../devices'
 
 const BaseSectionGrid = styled.section`
-  padding: 60px 30px;
+  padding: 90px 30px 30px;
 
   @media screen and (min-width: ${tablet}) {
     padding: 90px 30px;

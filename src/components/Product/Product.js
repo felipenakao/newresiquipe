@@ -16,9 +16,12 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import products from './products.json'
 
 const Wrapper = styled.div`
+  margin-top: 60px;
+
   @media screen and (min-width: ${laptop}) {
     max-width: ${laptopL};
     margin: auto;
+    margin-top: auto;
   }
 `
 
@@ -30,7 +33,7 @@ const ProductGrid = styled.div`
 `
 
 const ProductGallery = styled.div`
-  margin: 0 30px 30px;
+  margin: 0 0px 30px;
 
   & .image-gallery-thumbnail {
     cursor: pointer
@@ -50,11 +53,16 @@ const ProductGallery = styled.div`
 
 const ProductContent = styled.div`
   color: #072448;
-  margin: 0 30px;
+  margin: 0 0px;
 
   & h2 {
     font-size: 32px;
     margin-top: 0;
+    display: block;
+
+    @media screen and (max-width: ${laptop}) {
+      display: none;
+    }
   }
 
   & table {
@@ -91,8 +99,19 @@ const ProductBottom = styled.div`
   }
 
   & div {
-    margin: 0 30px;
+    margin: 0px;
+    @media screen and (min-width: ${laptop}) {
+      margin: 0 30px;
   }
+  }
+`
+
+const MobileTitle = styled.h2`
+color: var(--textColor);
+
+@media screen and (min-width: ${laptop}) {
+  display: none;
+}
 `
 
 const Product = () => {
@@ -117,6 +136,8 @@ const Product = () => {
   <BaseSection>
   <Wrapper>
     <ProductGrid>
+
+      <MobileTitle>{product.title}</MobileTitle>
       <ProductGallery>
         <ImageGallery showNav={false} showPlayButton={false} items={thumbnails} />
       </ProductGallery>

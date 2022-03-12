@@ -155,6 +155,15 @@ const Header = () => {
           >
             <img alt="Facebook" src="/assets/images/social/facebook.svg" />
           </a>
+
+          <a
+              title="Instagram - New Resiquipe"
+              href="http://instagram.com/newresiquipe"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img alt="Facebook" src="/assets/images/social/instagram.svg" />
+            </a>
         </MobileSocialGrid>
       </Navigation>
     </>

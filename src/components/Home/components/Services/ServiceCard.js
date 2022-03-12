@@ -27,7 +27,7 @@ const ServiceIcon = styled.img`
 `
 
 const ServiceTitle = styled.h3`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 `
 

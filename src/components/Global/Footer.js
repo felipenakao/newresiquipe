@@ -6,9 +6,13 @@ import CTAButton from "./Buttons/CTAButton";
 
 const FooterContainer = styled.footer`
   background: var(--textColor);
-  padding: 30px;
+  padding: 60px 30px 30px;
   color: #fff;
   font-family: Prompt;
+
+  @media screen and (min-width: ${tablet}){
+    padding: 30px
+  }
 `;
 
 const FooterContent = styled.div`
@@ -24,6 +28,7 @@ const FooterContent = styled.div`
 `;
 
 const MapGrid = styled.div`
+order: 2;
   margin: 15px 0px;
 
   & iframe {
@@ -36,6 +41,7 @@ const MapGrid = styled.div`
 `;
 
 const ContactInfoGrid = styled.div`
+order: 1;
   margin: 15px 0px;
 `;
 
@@ -53,6 +59,7 @@ const FooterText = styled.p`
 `;
 
 const LinksGrid = styled.div`
+order: 3;
   margin: 15px 0px;
   & a {
     color: #fff;
@@ -60,6 +67,7 @@ const LinksGrid = styled.div`
 `;
 
 const ButtonsGrid = styled.div`
+order: 4;
   margin: 15px 0px;
   display: flex;
   flex-direction: column;

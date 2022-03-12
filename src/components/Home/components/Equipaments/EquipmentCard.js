@@ -5,16 +5,22 @@ const EquipmentCardContainer = styled.div`
   background: #fff;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
-  padding: 30px;
+  padding: 15px;
   text-align: center;
   color: #152f50;
   font-family: "Prompt";
   position: relative;
   cursor: pointer;
   margin: 30px 0px;
+  width: auto;
+
+  & >a {
+    width: auto;
+  }
 
   @media screen and (min-width: ${tablet}) {
     max-width: 200px;
@@ -39,10 +45,16 @@ const EquipmentCardContainer = styled.div`
 `;
 
 const EquipmentImage = styled.img`
-max-width: 280px;
-  height: 200px;
+max-width: 200px;
+  height: auto;
   object-fit: contain;
   margin-bottom: 15px;
+
+  
+  @media screen and (min-width: ${tablet}){
+    max-width: 280px;
+    height: 200px;
+  }
 `;
 
 const EquipmentTitle = styled.h3`
@@ -68,9 +80,9 @@ const EquipamentHoverIcon = styled.img`
 
 const EquipmentHover = styled.div`
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
-    height: 200px;
+    height: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -81,6 +93,10 @@ const EquipmentHover = styled.div`
     &:hover {
       opacity: 1;
       transition: opacity .5s ease-in-out;
+    }
+
+    @media screen and (min-width: ${tablet}){
+      display: flex;
     }
 `;
 

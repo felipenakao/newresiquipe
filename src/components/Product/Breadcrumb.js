@@ -14,39 +14,43 @@ const Bar = styled.div`
   color: #fff;
   padding-top: 65px;
   text-align: center;
-  font-family: small;
+  position: fixed;
+  z-index: 7;
 
   @media screen and (min-width: ${laptop}) {
-    padding-top: 0px
+    padding-top: 0px;
+    position: relative;
   }
 
 `
 const Wrapper = styled.div`
+  display: flex;
   font-family: Prompt;
   margin: auto;
   max-width: ${laptopL};
-  display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
+
+  
+  @media screen and (max-width: ${laptop}) {
+  }
 `
 
 const Back = styled.div`
   cursor: pointer;
+  color: white;
+  margin: 10px;
 
   &:hover {
     color: #FECB00
-  }
-
-  @media screen and (max-width: ${laptop}) {
-    display: none;
   }
 
 `
 
 const Content = styled.div`
   & > * {
-    margin: 0px 5px;
+    margin: 0px 2px;
   }
 
   & a {
@@ -62,6 +66,10 @@ const Content = styled.div`
     color: #FECB00
   }
 
+  @media screen and (max-width: ${laptop}) {
+    display: none;
+  }
+
 `
 
 const Breadcrumb = ({ category, title }) => {
@@ -69,9 +77,10 @@ const Breadcrumb = ({ category, title }) => {
   return (
   <Bar>
     <Wrapper>
-
     
-    <Back onClick={() => navigate(-1)}><FontAwesomeIcon icon={faArrowLeft} /> Voltar</Back>
+    <Back onClick={() => navigate(-1)}>
+      <FontAwesomeIcon icon={faArrowLeft} /> Voltar
+    </Back>
 
     <Content>
       <Link to="/"><FontAwesomeIcon icon={faHome} />&nbsp;Página Inicial</Link>

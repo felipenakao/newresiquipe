@@ -58,7 +58,7 @@ export const Navigation = styled.nav`
   background: #FECB00;
   opacity: ${props => props.show ? '1' : '0'};
   width: calc(100% - 60px);
-  position: sticky;
+  position: fixed;
   padding: 45px 30px;
   transition-property: opacity, height;
   transition-duration: .5s;
@@ -155,6 +155,10 @@ export const MobileButtonsGrid = styled.div`
   display: flex;
   flex-direction: column;
   margin: 15px 0px;
+
+  & > a {
+    margin: 0px 0px 15px;
+  }
 
   @media screen and (min-width: ${laptop}) {
     display: none;

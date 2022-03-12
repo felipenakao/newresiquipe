@@ -19,7 +19,7 @@ const AboutUsContainer = styled.div`
     background-size: contain;
     max-width: ${tablet};
     padding: 30px;
-    margin: 60px auto;
+    margin: 0px auto 60px;
   }
 `
 
