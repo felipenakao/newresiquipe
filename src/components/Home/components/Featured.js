@@ -12,7 +12,7 @@ const FeaturedContainer = styled.section`
   padding-top: 60px;
 
   @media screen and (min-width: ${tablet}) {
-    margin: 0px auto;
+    margin: 48px auto 0px;
     padding: 0px 60px 15px;
     box-shadow: 0px 0px 30px rgba(0,0,0, .3);
   }
