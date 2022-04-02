@@ -34,8 +34,8 @@ const Header = ({ setIsActive, setProductionActive }) => {
   const menuLabels = [
     { label: "Quem Somos", href: "/#quem-somos" },
     { label: "Serviços", href: "/#servicos" },
-    { label: "Equipamentos", href: '/#equipamentos', submenu },
-    { label: "Equipamentos Selecionados", href: '/#equipamentos', submenu: submenuProduction },
+    { label: "Equipamentos por Categoria", href: '/#equipamentos', submenu },
+    { label: "Equipamentos por Demanda", href: '/#equipamentos', submenu: submenuProduction },
     { label: "Vídeos", href: "/#videos" },
     { label: "Downloads", href: "/downloads" },
     { label: "Contato & Localização", href: "/#contato" },
