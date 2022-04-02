@@ -12,9 +12,11 @@ const DownloadGrid = styled.div`
   display: flex;
   padding: 30px;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   @media (min-width: ${tablet}) {
-    
+    flex-direction: row;
   }
 `
 

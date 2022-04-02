@@ -71,11 +71,12 @@ export const Navigation = styled.nav`
   transition-property: visibility, height;
   transition-duration: .5s;
   transition-timing-function: ease;
-  height: ${props => props.show ? '100vh' : '0vh'};
+  height: ${props => props.show ? 'calc(100vh - 60px)' : '0vh'};
   align-items: center;
   justify-content: center;
-  overflow-y: scroll;
-  z-index: 8;
+  z-index: 9;
+
+
 
   @media screen and (min-width: ${laptop}) {
     padding: 0px;
@@ -86,6 +87,13 @@ export const Navigation = styled.nav`
     position: sticky;
     top: 0px;
     overflow: visible;
+  }
+
+  & .navigation-content-grid {
+    height: 100%;
+    padding: 30px 0px;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 `;
 

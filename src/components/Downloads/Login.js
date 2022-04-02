@@ -19,11 +19,16 @@ const Grid = styled.div`
 const Input = styled.input`
   border: 1px solid #ccc;
   padding: 10px 15px;
-  min-width: 250px;
+  min-width: 50%;
   margin: auto;
   font-family: Prompt;
+  font-size: 16px;
   color: var(--textColor);
   text-align: center;
+
+  @media (min-width: ${tablet}) {
+    min-width: 250px;
+  }
 `
 
 const Error = styled.p`

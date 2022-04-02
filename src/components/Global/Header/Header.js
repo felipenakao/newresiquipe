@@ -138,6 +138,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
         () => {
                       expandProductSubmenu(false)
                     }} aria-expanded={isOpen} show={isOpen}>
+                      <div className="navigation-content-grid">
         <NavigationLinks>
           {menuLabels.length &&
             menuLabels.map(({ label, href, submenu }, i) => {
@@ -218,6 +219,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
               <img alt="Facebook" src="/assets/images/social/instagram.svg" />
             </a>
         </MobileSocialGrid>
+        </div>
       </Navigation>
       </TopMenu>
     </>
