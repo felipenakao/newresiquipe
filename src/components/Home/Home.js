@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BaseSeparator from '../Global/BaseSeparator';
 import Footer from '../Global/Footer';
 import Header from '../Global/Header/Header';
@@ -8,17 +8,33 @@ import Featured from './components/Featured';
 import Services from './components/Services/Services';
 import Videos from './components/Videos/Videos';
 
-const Home = () => (<>
-  <Header />
+const Home = () => {
+
+  const [isActive, setIsActive] = useState('');
+  const [categoryExpand, toggleCategoryExpand] = useState(false);
+  const [productionExpand, toggleProductionExpand] = useState(false);
+  const [isProductionActive, setProductionActive] = useState('');
+  
+  return (<>
+  <Header setIsActive={setIsActive} setProductionActive={setProductionActive} />
   <Featured />
   <AboutUs />
   <BaseSeparator />
   <Services/>
   <BaseSeparator />
-  <Equipaments />
+  <Equipaments
+    isActive={isActive}
+    setIsActive={setIsActive}
+    categoryExpand={categoryExpand}
+    toggleCategoryExpand={toggleCategoryExpand}
+    productionExpand={productionExpand} 
+    toggleProductionExpand={toggleProductionExpand}
+    isProductionActive={isProductionActive}
+    setProductionActive={setProductionActive}
+  />
   <BaseSeparator />
   <Videos />
   <Footer />
-</>);
+</>)};
 
 export default Home

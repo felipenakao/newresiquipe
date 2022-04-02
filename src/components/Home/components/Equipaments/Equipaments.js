@@ -102,15 +102,9 @@ align-items: center;
 }
 `
 
-const Equipaments = () => {
-  const [isActive, setIsActive] = useState('');
-  const [categoryExpand, toggleCategoryExpand] = useState(false);
-  const [productionExpand, toggleProductionExpand] = useState(false);
-  const [isProductionActive, setProductionActive] = useState('');
+const Equipaments = ({ isActive, setIsActive, categoryExpand, toggleCategoryExpand, productionExpand, toggleProductionExpand, isProductionActive, setProductionActive }) => {
 
   const filtered = products.filter(product => ((product.production == isProductionActive || isProductionActive == '') && (product.category == isActive || isActive == '')))
-
-  console.log('isActive', isActive)
 
   return (
     <BaseSection id="equipamentos">
@@ -133,7 +127,7 @@ const Equipaments = () => {
       </BaseTitle>
 
       <ActionsBar>
-        <FilterGrid expanded={productionExpand} onClick={() => toggleProductionExpand(!productionExpand)}>
+        <FilterGrid expanded={(window.innerWidth > 768) ? true : productionExpand} onClick={() => toggleProductionExpand(!productionExpand)}>
           <span>
             <FontAwesomeIcon icon={faFilter} />  {isProductionActive ? <span>Filtrado por <b>{filters.production.find(production => production.id === isProductionActive).label}</b></span> : 'Filtrar por Demanda:'}
           </span>
@@ -145,7 +139,7 @@ const Equipaments = () => {
           />
         </FilterGrid>
 
-        <FilterGrid expanded={categoryExpand} onClick={() => toggleCategoryExpand(!categoryExpand)}>
+        <FilterGrid expanded={(window.innerWidth > 768) ? true : categoryExpand} onClick={() => toggleCategoryExpand(!categoryExpand)}>
           <span>
             <FontAwesomeIcon icon={faFilter} /> {isActive ? <span>Filtrado por <b>{filters.categories.find(category => category.id === isActive).label}</b></span> : 'Filtrar por Categorias:'}
           </span>

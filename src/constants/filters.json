@@ -1,6 +1,6 @@
 {
   "categories": [
-  { "id": "", "label": "Todas" },
+  { "id": "", "label": "Todos" },
   { "id": "aplicadores", "label": "Aplicadores" },
   { "id": "dosadores", "label": "Dosadores" },
   { "id": "cura", "label": "Equipamentos para Cura" },
@@ -10,7 +10,7 @@
   ],
 
   "production": [
-    { "id": "", "label": "Todas" },
+    { "id": "", "label": "Todos" },
     { "id": "high", "label": "Alta Produção" },
     { "id": "medium", "label": "Média Produção" },
     { "id": "low", "label": "Baixa Produção" }

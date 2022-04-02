@@ -26,6 +26,7 @@ const Bar = styled.div`
 const Wrapper = styled.div`
   display: flex;
   font-family: Prompt;
+  font-size: 14px;
   margin: auto;
   max-width: ${laptopL};
   justify-content: space-between;

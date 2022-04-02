@@ -17,19 +17,56 @@ import {
 } from "./styles";
 
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import products from '../../../components/Product/products.json'
+import filters from '../../../constants/filters.json'
 
-const Header = () => {
+const submenu = filters.categories.map(category => ({ type: 'category', label: category.label, id: category.id,  products: products.filter(product => product.category === category.id) }))
+const submenuProduction = filters.production.map(production => ({ type: 'production', label: production.label, id: production.id }))
+
+console.log('submenuProduction', submenuProduction)
+
+const Header = ({ setIsActive, setProductionActive }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProductSubmenuExpanded, expandProductSubmenu] = useState(false)
   const menuLabels = [
-    { label: "Página Inicial", href: "/" },
     { label: "Quem Somos", href: "/#quem-somos" },
     { label: "Serviços", href: "/#servicos" },
-    { label: "Todos os Equipamentos", href: "/#equipamentos" },
-    { label: "Central de Vídeos", href: "/#videos" },
+    { label: "Equipamentos", href: '/#equipamentos', submenu },
+    { label: "Equipamentos Selecionados", href: '/#equipamentos', submenu: submenuProduction },
+    { label: "Vídeos", href: "/#videos" },
+    { label: "Downloads", href: "/downloads" },
     { label: "Contato & Localização", href: "/#contato" },
   ];
+
+  const scrollToEquipmentsSection = (id, type) => {
+    console.log('scrollToEquipmentsSection', id, type)
+    window.location.href = '/#equipamentos'
+
+
+    setTimeout(() => {
+      if (type === 'category') {
+        setIsActive(id)
+        setProductionActive('')
+        setIsOpen(false)
+
+        document.getElementById('mainNavigation').querySelectorAll('li').forEach(element => element.blur())
+      }
+  
+      if (type === 'production') {
+        setProductionActive(id)
+        setIsActive('')
+        setIsOpen(false)
+        document.getElementById('mainNavigation').querySelectorAll('li').forEach(element => {
+          console.log('elemet', element)
+          element.blur()
+          element.style.pointerEvents = "auto"
+        })
+      }
+    }, 300)
+  }
 
   return (
     <>
@@ -98,19 +135,36 @@ const Header = () => {
         </Wrapper>
       </TopMenu>
 
-      <Navigation aria-expanded={isOpen} show={isOpen}>
+      <Navigation id="mainNavigation" onMouseLeave={
+        () => {
+                      expandProductSubmenu(false)
+                    }} aria-expanded={isOpen} show={isOpen}>
         <NavigationLinks>
           {menuLabels.length &&
-            menuLabels.map(({ label, href }, i) => {
+            menuLabels.map(({ label, href, submenu }, i) => {
               return (
-                <li key={i}>
+                <li onClick={() => {
+                  window.location.href = href
+                }} key={i}>
                   <a
                     href={href}
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => {
+                      if (href === '/#equipamentos') {
+                        scrollToEquipmentsSection('')
+                      } else {
+                        setIsOpen(false)
+                      }
+
+                      
+                    }}
                     role="menuitem"
                   >
                     {label}
+
+                    {submenu && <FontAwesomeIcon style={{ marginLeft: '5px' }} icon={faChevronDown} />}
                   </a>
+
+                  {submenu && <ul className="submenu">{submenu.map(li => <li onClick={() => scrollToEquipmentsSection(li.id, li.type)}>{(li.products && window.innerWidth > 768) && <ul className="side-menu">{li.products.map(product => <li onClick={() => window.location.href = '/produto/'+product.id}>{product.title}</li>)}</ul>}{li.label}</li>)}</ul>}
                 </li>
               );
             })}
