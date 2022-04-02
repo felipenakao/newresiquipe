@@ -94,6 +94,13 @@ export const Navigation = styled.nav`
     padding: 30px 0px;
     overflow-y: scroll;
     overflow-x: hidden;
+
+    @media screen and (min-width: ${laptop}) { 
+
+      padding: 0px;
+      overflow: visible;
+      height: 50px;
+    }
   }
 `;
 
