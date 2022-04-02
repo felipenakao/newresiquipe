@@ -18,7 +18,7 @@ const Bar = styled.div`
   z-index: 7;
 
   @media screen and (min-width: ${laptop}) {
-    padding-top: 0px;
+    padding-top: 48px;
     position: relative;
   }
 
