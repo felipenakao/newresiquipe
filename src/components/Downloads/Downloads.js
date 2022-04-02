@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { tablet } from "../../devices";
 import BaseSection from "../Global/BaseSection";
 import BaseTitle from "../Global/BaseTitle";
 import Footer from "../Global/Footer";
@@ -11,6 +12,10 @@ const DownloadGrid = styled.div`
   display: flex;
   padding: 30px;
   justify-content: center;
+
+  @media (min-width: ${tablet}) {
+    
+  }
 `
 
 const Arquivo = styled.a`

@@ -133,9 +133,8 @@ const Header = ({ setIsActive, setProductionActive }) => {
 
           <MenuIconMobile isOpen={isOpen} setIsOpen={setIsOpen} />
         </Wrapper>
-      </TopMenu>
 
-      <Navigation id="mainNavigation" onMouseLeave={
+        <Navigation id="mainNavigation" onMouseLeave={
         () => {
                       expandProductSubmenu(false)
                     }} aria-expanded={isOpen} show={isOpen}>
@@ -220,6 +219,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
             </a>
         </MobileSocialGrid>
       </Navigation>
+      </TopMenu>
     </>
   );
 };

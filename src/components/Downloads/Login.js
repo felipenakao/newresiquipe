@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { tablet } from "../../devices";
 import BaseSection from "../Global/BaseSection";
 import BaseTitle from "../Global/BaseTitle";
 import Footer from "../Global/Footer";
@@ -7,7 +8,12 @@ import Header from "../Global/Header/Header";
 
 const Grid = styled.div`
   text-align: center;
-  padding: 30px;
+
+  padding: 30px 0px; 
+
+  @media (min-width: ${tablet}) {
+    padding: 30px; 
+  }
 `
 
 const Input = styled.input`
@@ -35,7 +41,7 @@ const Submit = styled.button`
   font-weight: bold;
   letter-spacing: 2px;
   padding: 10px 20px;
-  margin: 15px;
+  margin: 30px 15px 15px;
 
   &:hover {
     background-color: var(--textColor);

@@ -9,8 +9,9 @@ export const TopMenu = styled.header`
   width: calc(100% - 60px);
 
   @media screen and (min-width: ${laptop}) {
-    padding: 30px;
-    position: static
+    padding: 0px;
+    position: static;
+    width: 100%;
   }
 `;
 
@@ -19,6 +20,11 @@ export const Wrapper = styled.div`
   margin: auto;
   display: flex;
   justify-content: space-between;
+  
+
+  @media screen and (min-width: ${laptop}) {
+    padding: 30px;
+  }
 `
 
 export const LogoGrid = styled.div`
@@ -58,17 +64,18 @@ export const Navigation = styled.nav`
   background: #FECB00;
   visibility: ${props => props.show ? 'visible' : 'hidden'};
   width: calc(100% - 60px);
-  position: fixed;
-  padding: 45px 30px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 0px 30px;
   transition-property: visibility, height;
   transition-duration: .5s;
   transition-timing-function: ease;
   height: ${props => props.show ? '100vh' : '0vh'};
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-y: scroll;
   z-index: 8;
-  top: 0px;
 
   @media screen and (min-width: ${laptop}) {
     padding: 0px;
