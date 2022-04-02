@@ -10,7 +10,8 @@ export const TopMenu = styled.header`
 
   @media screen and (min-width: ${laptop}) {
     padding: 0px;
-    position: static;
+    position: sticky;
+    top: -102px;
     width: 100%;
   }
 `;
@@ -84,19 +85,18 @@ export const Navigation = styled.nav`
     width: 100%;
     visibility: visible;
     transition: none;
-    position: sticky;
-    top: 0px;
     overflow: visible;
+    top: 100px;
   }
 
   & .navigation-content-grid {
+
     height: 100%;
     padding: 30px 0px;
     overflow-y: scroll;
     overflow-x: hidden;
 
     @media screen and (min-width: ${laptop}) { 
-
       padding: 0px;
       overflow: visible;
       height: 50px;
