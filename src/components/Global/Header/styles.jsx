@@ -204,10 +204,11 @@ export const NavigationLinks = styled.ul`
         display: block;
       }
     }
-
+    
     &:hover .submenu {
-      display: block;
-    }
+        display: block;
+      }
+
   }
 
   & > li > a {

@@ -34,20 +34,19 @@ const Header = ({ setIsActive, setProductionActive }) => {
   const menuLabels = [
     { label: "Quem Somos", href: "/#quem-somos" },
     { label: "Serviços", href: "/#servicos" },
-    { label: "Equipamentos por Categoria", href: '/#equipamentos', submenu },
-    { label: "Equipamentos por Demanda", href: '/#equipamentos', submenu: submenuProduction },
+    { label: "Equipamentos por Categoria", href: '/#equipamentos', submenu, type: 'category' },
+    { label: "Equipamentos por Demanda", href: '/#equipamentos', submenu: submenuProduction, type: 'production' },
     { label: "Vídeos", href: "/#videos" },
     { label: "Downloads", href: "/downloads" },
     { label: "Contato & Localização", href: "/#contato" },
   ];
 
   const scrollToEquipmentsSection = (id, type) => {
-    console.log('scrollToEquipmentsSection', id, type)
     window.location.href = '/#equipamentos'
 
 
     setTimeout(() => {
-      if (type === 'category') {
+      if (id && type === 'category') {
         setIsActive(id)
         setProductionActive('')
         setIsOpen(false)
@@ -55,7 +54,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
         document.getElementById('mainNavigation').querySelectorAll('li').forEach(element => element.blur())
       }
   
-      if (type === 'production') {
+      if (id && type === 'production') {
         setProductionActive(id)
         setIsActive('')
         setIsOpen(false)
@@ -134,27 +133,53 @@ const Header = ({ setIsActive, setProductionActive }) => {
           <MenuIconMobile isOpen={isOpen} setIsOpen={setIsOpen} />
         </Wrapper>
 
-        <Navigation id="mainNavigation" onMouseLeave={
+        <Navigation id="mainNavigation" onClick={(e) => {
+            e.stopPropagation();
+              document.querySelectorAll('.submenu').forEach(e => {
+                e.style.display = "none"
+              })  
+
+              
+        }} onMouseLeave={
         () => {
                       expandProductSubmenu(false)
                     }} aria-expanded={isOpen} show={isOpen}>
                       <div className="navigation-content-grid">
         <NavigationLinks>
           {menuLabels.length &&
-            menuLabels.map(({ label, href, submenu }, i) => {
+            menuLabels.map(({ label, href, submenu, type }, i) => {
               return (
                 <li onClick={() => {
+                  if (href !== '/#equipamentos') {
+                  document.querySelectorAll('.submenu').forEach(e => {
+                    e.style.display = "none"
+                  })
+                  }
                   window.location.href = href
                 }} key={i}>
                   <a
                     href={href}
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       if (href === '/#equipamentos') {
-                        scrollToEquipmentsSection('')
-                      } else {
-                        setIsOpen(false)
-                      }
+                        scrollToEquipmentsSection('', type)
 
+                        const element = document.getElementById(`submenu_${type}`)
+
+                        if (element.style.display === "block") {
+                          element.style.display = "none";
+                        } else {
+                          document.querySelectorAll('.submenu').forEach(e => {
+                            e.style.display = "none"
+                          })
+                          element.style.display = "block";
+                        }
+                      } else {
+                        setIsOpen(false);
+                        document.querySelectorAll('.submenu').forEach(e => {
+                          e.style.display = "none"
+                        })
+                      }
                       
                     }}
                     role="menuitem"
@@ -164,7 +189,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
                     {submenu && <FontAwesomeIcon style={{ marginLeft: '5px' }} icon={faChevronDown} />}
                   </a>
 
-                  {submenu && <ul className="submenu">{submenu.map(li => <li onClick={() => scrollToEquipmentsSection(li.id, li.type)}>{(li.products && window.innerWidth > 768) && <ul className="side-menu">{li.products.map(product => <li onClick={() => window.location.href = '/produto/'+product.id}>{product.title}</li>)}</ul>}{li.label}</li>)}</ul>}
+                  {submenu && <ul id={`submenu_${type}`} className="submenu">{submenu.map(li => <li onClick={() => scrollToEquipmentsSection(li.id, li.type)}>{(li.products && window.innerWidth > 768) && <ul className="side-menu">{li.products.map(product => <li onClick={() => window.location.href = '/produto/'+product.id}>{product.title}</li>)}</ul>}{li.label}</li>)}</ul>}
                 </li>
               );
             })}
