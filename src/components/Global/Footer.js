@@ -167,7 +167,7 @@ const Footer = () => {
               Fale Conosco
             </CTAButton>
             </div>
-          <div>
+          {/* <div>
           <CTAButton
               iconSize={14}
               bgColor="#032F6A"
@@ -177,7 +177,7 @@ const Footer = () => {
             >
               Loja Virtual
             </CTAButton>
-          </div>
+          </div> */}
 
             <div>
             {/* <CTAButton

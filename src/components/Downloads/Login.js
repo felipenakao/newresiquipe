@@ -74,7 +74,6 @@ const Login = ({ handleLogin, error }) => {
 
         <Grid>
           <Input placeholder="Digite a senha aqui..." onKeyPress={event => {
-            console.log('event', event)
             if (event.key === 'Enter') {
               handleLogin(value)
             }

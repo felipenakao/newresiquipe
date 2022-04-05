@@ -26,11 +26,8 @@ import filters from '../../../constants/filters.json'
 const submenu = filters.categories.map(category => ({ type: 'category', label: category.label, id: category.id,  products: products.filter(product => product.category === category.id) }))
 const submenuProduction = filters.production.map(production => ({ type: 'production', label: production.label, id: production.id }))
 
-console.log('submenuProduction', submenuProduction)
-
 const Header = ({ setIsActive, setProductionActive }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isProductSubmenuExpanded, expandProductSubmenu] = useState(false)
   const menuLabels = [
     { label: "Quem Somos", href: "/#quem-somos" },
     { label: "Serviços", href: "/#servicos" },
@@ -59,7 +56,6 @@ const Header = ({ setIsActive, setProductionActive }) => {
         setIsActive('')
         setIsOpen(false)
         document.getElementById('mainNavigation').querySelectorAll('li').forEach(element => {
-          console.log('elemet', element)
           element.blur()
           element.style.pointerEvents = "auto"
         })
@@ -110,7 +106,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
           </LogoGrid>
 
           <ButtonsGrid>
-            <CTAButton
+            {/* <CTAButton
               iconSize={14}
               bgColor="#032F6A"
               title="Ir para loja virtual"
@@ -118,7 +114,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
               icon={faShoppingCart}
             >
               Loja Virtual
-            </CTAButton>
+            </CTAButton> */}
 
             <CTAButton
               bgColor="#26D366"
@@ -140,10 +136,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
               })  
 
               
-        }} onMouseLeave={
-        () => {
-                      expandProductSubmenu(false)
-                    }} aria-expanded={isOpen} show={isOpen}>
+        }} aria-expanded={isOpen} show={isOpen}>
                       <div className="navigation-content-grid">
         <NavigationLinks>
           {menuLabels.length &&
@@ -195,7 +188,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
             })}
         </NavigationLinks>
 
-        <MobileButtonsGrid>
+        {/* <MobileButtonsGrid>
           <CTAButton
             iconSize={14}
             bgColor="#032F6A"
@@ -214,7 +207,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
           >
             Fale Conosco
           </CTAButton>
-        </MobileButtonsGrid>
+        </MobileButtonsGrid> */}
 
         <MobileSocialGrid>
           <a
