@@ -1,3 +1,4 @@
+import Helmet from "react-helmet";
 import styled from "styled-components";
 import { tablet } from "../../devices";
 import BaseSection from "../Global/BaseSection";
@@ -89,10 +90,16 @@ const Button = styled.button`
 
 const Downloads = ({ handleLogout }) => {
   return <>
+  <Helmet>
+    <meta charSet="utf-8" />
+    <title>New Resiquipe -  Área de Downloads</title>
+    <meta name="description" content="Área de dowloads de documentos e instruções para operar os equipamentos." />
+  </Helmet>
+
   <Header></Header>
 
   <BaseSection>
-    <BaseTitle overlayText="Downloads" subtitle="Clique em um dos arquivos para realizar o download dos arquivos.">
+    <BaseTitle overlayText="Downloads" subtitle="Clique em um dos arquivos para realizar o download.">
       Área de <span>Downloads</span>
     </BaseTitle>
 
@@ -112,12 +119,12 @@ const Downloads = ({ handleLogout }) => {
         <span>Documento</span>
       </Arquivo>
 
-      <Arquivo>
+      {/* <Arquivo>
         <img src="/assets/images/downloads/exe.png" />
         
         <p>Exemplo de arquivo de programa CNC</p>
         <span>Programa</span>
-      </Arquivo>
+      </Arquivo> */}
     </DownloadGrid>
 
     <ButtonsGrid>

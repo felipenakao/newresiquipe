@@ -14,6 +14,7 @@ import Footer from '../Global/Footer';
 
 import "react-image-gallery/styles/css/image-gallery.css";
 import products from './products.json'
+import Helmet from 'react-helmet';
 
 const Wrapper = styled.div`
   margin-top: 60px;
@@ -130,7 +131,15 @@ const Product = () => {
   }, [location.pathname]);
 
   return (<>
+  <Helmet>
+    <meta charSet="utf-8" />
+    <title>New Resiquipe - {product.title}</title>
+    <meta name="description" content={product.description} />
+    <meta property="og:image" content={thumbnails ? thumbnails[0] : ''} />
+  </Helmet>
+
   <Header />
+
   <Breadcrumb category={product.category} title={product.title} />
 
   <BaseSection>

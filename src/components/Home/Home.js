@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from "react-helmet";
 import BaseSeparator from '../Global/BaseSeparator';
 import Footer from '../Global/Footer';
 import Header from '../Global/Header/Header';
@@ -16,6 +17,12 @@ const Home = () => {
   const [isProductionActive, setProductionActive] = useState('');
   
   return (<>
+  <Helmet>
+    <meta charSet="utf-8" />
+    <title>New Resiquipe - Equipamentos para resinagem</title>
+    <link rel="canonical" href="https://newresiquipe.com" />
+    <meta name="description" content="A New Resiquipe Equipamentos para Resinagem é uma empresa brasileira que, desde 1994 atua no segmento de equipamentos para Resina Epóxi e PU (poliuretano)." />
+  </Helmet>
   <Header setIsActive={setIsActive} setProductionActive={setProductionActive} />
   <Featured />
   <AboutUs />
@@ -35,6 +42,9 @@ const Home = () => {
   <BaseSeparator />
   <Videos />
   <Footer />
+  <div className='loadingElement'>
+    <img src='assets/images/logo-new-resiquipe.png' />
+  </div>
 </>)};
 
 export default Home

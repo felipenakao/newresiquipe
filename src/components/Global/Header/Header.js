@@ -182,7 +182,25 @@ const Header = ({ setIsActive, setProductionActive }) => {
                     {submenu && <FontAwesomeIcon style={{ marginLeft: '5px' }} icon={faChevronDown} />}
                   </a>
 
-                  {submenu && <ul id={`submenu_${type}`} className="submenu">{submenu.map(li => <li onClick={() => scrollToEquipmentsSection(li.id, li.type)}>{(li.products && window.innerWidth > 768) && <ul className="side-menu">{li.products.map(product => <li onClick={() => window.location.href = '/produto/'+product.id}>{product.title}</li>)}</ul>}{li.label}</li>)}</ul>}
+                  {submenu &&
+                    <ul id={`submenu_${type}`} className="submenu">
+                      {submenu.map(li => <li key={li.id} onClick={(e) => {
+                        e.stopPropagation()
+                        console.log('click submenu')
+                        scrollToEquipmentsSection(li.id, li.type)
+                        }}>
+                        {(li.products && window.innerWidth > 768) && <ul className="side-menu">
+                          {li.products.map(product => <li key={product.id} onClick={(e) => {
+                            e.stopPropagation()
+                            console.log('click side')
+                              window.location.href = '/produto/'+product.id
+                            }}>
+                            {product.title}
+                          </li>)}
+                        </ul>}{li.label}
+                      </li>)}
+                    </ul>
+                  }
                 </li>
               );
             })}
