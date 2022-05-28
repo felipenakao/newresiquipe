@@ -20,8 +20,13 @@ const Home = () => {
   <Helmet>
     <meta charSet="utf-8" />
     <title>New Resiquipe - Equipamentos para resinagem</title>
-    <link rel="canonical" href="https://newresiquipe.com" />
     <meta name="description" content="A New Resiquipe Equipamentos para Resinagem é uma empresa brasileira que, desde 1994 atua no segmento de equipamentos para Resina Epóxi e PU (poliuretano)." />
+    {/* <meta property="og:type" content="article" />
+    <meta property="og:title" content="TITLE OF YOUR POST OR PAGE" />
+    <meta property="og:description" content="DESCRIPTION OF PAGE CONTENT" />
+    <meta property="og:image" content="LINK TO THE IMAGE FILE" />
+    <meta property="og:url" content="http" />
+    <meta property="og:site_name" content="SITE NAME" /> */}
   </Helmet>
   <Header setIsActive={setIsActive} setProductionActive={setProductionActive} />
   <Featured />
