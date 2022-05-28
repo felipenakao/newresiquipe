@@ -135,9 +135,10 @@ const Product = () => {
     <meta charSet="utf-8" />
     <title>New Resiquipe - {product.title}</title>
     <meta name="description" content={product.description} />
-    <meta property="og:image" content={thumbnails ? thumbnails[0] : ''} />
+    <meta property="og:image" content={thumbnails ? thumbnails[0].original : ''} />
     <meta property="og:title" content={`New Resiquipe - ${product.title}`} />
     <meta property="og:url" content={window.location.href} />
+    <meta property="url" content={window.location.href} />
   </Helmet>
 
   <Header />
