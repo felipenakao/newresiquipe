@@ -24,7 +24,7 @@ const Home = () => {
     <meta property="og:type" content="website" />
     <meta property="og:title" content="New Resiquipe - Equipamentos para resinagem" />
     <meta property="og:description" content="A New Resiquipe Equipamentos para Resinagem é uma empresa brasileira que, desde 1994 atua no segmento de equipamentos para Resina Epóxi e PU (poliuretano)." />
-    <meta property="og:image" content="https://master.djdeh7nlqc3wh.amplifyapp.com/logo-new-resiquipe.jpg" />
+    <meta property="og:image" secure_url content="https://master.djdeh7nlqc3wh.amplifyapp.com/logo-new-resiquipe.jpg" />
     <meta property="og:url" content={window.location.href} />
     <meta property="og:site_name" content="New Resiquipe" />
   </Helmet>
