@@ -135,11 +135,12 @@ const Product = () => {
     <meta charSet="utf-8" />
     <title>New Resiquipe - {product.title}</title>
     <meta name="description" content={product.description} />
+    <meta name="url" content={window.location.href} />
+    <meta property="og:title" content={`New Resiquipe - ${product.title}`} />
     <meta property="og:image" content={thumbnails ? window.location.origin+thumbnails[0].original : ''} />
     <meta property="og:description" content={product.description} />
-    <meta property="og:title" content={`New Resiquipe - ${product.title}`} />
     <meta property="og:url" content={window.location.href} />
-    <meta name="url" content={window.location.href} />
+    <meta property="og:type" content="website" />
   </Helmet>
 
   <Header />
@@ -169,7 +170,7 @@ const Product = () => {
             href="https://wa.me/5511981637814"
             icon={faWhatsapp}
           >
-            Solicitar Equipamento
+            Solicitar Orçamento
           </CTAButton>
         </ButtonGrid>
 
