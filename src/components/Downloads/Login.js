@@ -68,8 +68,8 @@ const Login = ({ handleLogin, error }) => {
 
       <BaseSection>
 
-        <BaseTitle overlayText="Downloads" subtitle="Insira uma senha para ter acesso aos arquivos para download.">
-          Área de <span>Downloads</span>
+        <BaseTitle overlayText="Downloads" subtitle="Tenha acesso aos arquivos para download e vídeo-aulas de treinamento.">
+          Área <span>Restrita</span>
         </BaseTitle>
 
         <Grid>

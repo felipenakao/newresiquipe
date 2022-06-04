@@ -6,6 +6,7 @@ import Login from './components/Downloads/Login';
 // Components
 import Home from './components/Home/Home'
 import Product from './components/Product/Product'
+import Restrito from './components/Restrito/Restrito';
 
 
 function App() {
@@ -36,7 +37,9 @@ function App() {
   let routes = useRoutes([
     { path: '/', element: <Home /> },
     { path: "/produto/:id", element: <Product /> },
-    { path: "/downloads", element: isValidPassword() ? <Downloads handleLogout={handleLogout}  /> : <Login handleLogin={handleLogin} error={error} setError={setError} /> }
+    // { path: "/restrito", element: <Restrito /> },
+    { path: "/restrito", element: isValidPassword() ? <Downloads handleLogout={handleLogout}  /> : <Login handleLogin={handleLogin} error={error} setError={setError} /> },
+    // { path: "/restr", element: isValidPassword() ? <Restrito handleLogout={handleLogout}  /> : <Login handleLogin={handleLogin} error={error} setError={setError} /> }
   ]);
 
   return routes

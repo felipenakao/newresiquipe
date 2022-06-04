@@ -112,7 +112,7 @@ export const NavigationLinks = styled.ul`
   & > li  {
     cursor: pointer;
     list-style-type: none;
-    font-size: 18px;
+    font-size: 16px;
     margin: 0px 0px 15px;
     position: relative;
     padding: 0px 10px;
@@ -211,7 +211,7 @@ export const NavigationLinks = styled.ul`
 
   }
 
-  & > li > a {
+  & > li  {
     text-decoration: none;
     color: #032F6A;
     font-family: Prompt;
@@ -226,12 +226,12 @@ export const NavigationLinks = styled.ul`
     display: flex;
     align-items: center;
     position: relative;
-    gap: 30px;
+    gap: 15px;
 
     height: 50px;
 
     & > li  {
-      font-size: 16px;
+      font-size: 14px;
       margin: 0px;
       height: 50px;
       display: flex;

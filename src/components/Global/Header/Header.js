@@ -18,7 +18,7 @@ import {
 
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faChevronDown, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import products from '../../../components/Product/products.json'
 import filters from '../../../constants/filters.json'
@@ -28,31 +28,33 @@ const submenuProduction = filters.production.map(production => ({ type: 'product
 
 const Header = ({ setIsActive, setProductionActive }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const menuLabels = [
     { label: "Quem Somos", href: "/#quem-somos" },
     { label: "Serviços", href: "/#servicos" },
     { label: "Equipamentos por Categoria", href: '/#equipamentos', submenu, type: 'category' },
     { label: "Equipamentos por Demanda", href: '/#equipamentos', submenu: submenuProduction, type: 'production' },
     { label: "Vídeos", href: "/#videos" },
-    { label: "Downloads", href: "/downloads" },
+    { label: "Downloads + Treinamentos", href: "/restrito" },
+    // { label: "Treinamentos", href: "/treinamentos" },
     { label: "Contato & Localização", href: "/#contato" },
   ];
 
   const scrollToEquipmentsSection = (id, type) => {
+    // navigate("/#equipamentos")
     window.location.href = '/#equipamentos'
 
-
     setTimeout(() => {
-      if (id && type === 'category') {
-        setIsActive(id)
+      if (type === 'category') {
+        setIsActive(id || '')
         setProductionActive('')
         setIsOpen(false)
 
         document.getElementById('mainNavigation').querySelectorAll('li').forEach(element => element.blur())
       }
   
-      if (id && type === 'production') {
-        setProductionActive(id)
+      if (type === 'production') {
+        setProductionActive(id || '')
         setIsActive('')
         setIsOpen(false)
         document.getElementById('mainNavigation').querySelectorAll('li').forEach(element => {
@@ -129,134 +131,113 @@ const Header = ({ setIsActive, setProductionActive }) => {
           <MenuIconMobile isOpen={isOpen} setIsOpen={setIsOpen} />
         </Wrapper>
 
-        <Navigation id="mainNavigation" onClick={(e) => {
-            e.stopPropagation();
-              document.querySelectorAll('.submenu').forEach(e => {
-                e.style.display = "none"
-              })  
-
-              
-        }} aria-expanded={isOpen} show={isOpen}>
-                      <div className="navigation-content-grid">
-        <NavigationLinks>
-          {menuLabels.length &&
-            menuLabels.map(({ label, href, submenu, type }, i) => {
-              return (
-                <li onClick={() => {
-                  if (href !== '/#equipamentos') {
-                  document.querySelectorAll('.submenu').forEach(e => {
-                    e.style.display = "none"
-                  })
-                  }
-                  window.location.href = href
-                }} key={i}>
-                  <a
-                    href={href}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (href === '/#equipamentos') {
-                        scrollToEquipmentsSection('', type)
-
-                        const element = document.getElementById(`submenu_${type}`)
-
-                        if (element.style.display === "block") {
-                          element.style.display = "none";
-                        } else {
-                          document.querySelectorAll('.submenu').forEach(e => {
-                            e.style.display = "none"
-                          })
-                          element.style.display = "block";
-                        }
-                      } else {
-                        setIsOpen(false);
+        <Navigation
+          id="mainNavigation" onClick={(e) => {
+            // e.stopPropagation();
+              // document.querySelectorAll('.submenu').forEach(e => {
+              //   e.style.display = "none"
+              // })  
+          }}
+          aria-expanded={isOpen}
+          show={isOpen}
+        >
+          <div className="navigation-content-grid">
+            <NavigationLinks>
+              {menuLabels.length &&
+                menuLabels.map(({ label, href, submenu, type }, i) => {
+                  return (
+                    <li onClick={() => {
+                      if (href !== '/#equipamentos') {
                         document.querySelectorAll('.submenu').forEach(e => {
                           e.style.display = "none"
                         })
                       }
-                      
-                    }}
-                    role="menuitem"
-                  >
-                    {label}
+                      // navigate(href)
+                      window.location.href = href
 
-                    {submenu && <FontAwesomeIcon style={{ marginLeft: '5px' }} icon={faChevronDown} />}
-                  </a>
+                      console.log('HREF', href)
+                    }} key={i}>
+                        {label}
 
-                  {submenu &&
-                    <ul id={`submenu_${type}`} className="submenu">
-                      {submenu.map(li => <li key={li.id} onClick={(e) => {
-                        e.stopPropagation()
-                        console.log('click submenu')
-                        scrollToEquipmentsSection(li.id, li.type)
-                        }}>
-                        {(li.products && window.innerWidth > 768) && <ul className="side-menu">
-                          {li.products.map(product => <li key={product.id} onClick={(e) => {
+                        {submenu && <FontAwesomeIcon style={{ marginLeft: '5px' }} icon={faChevronDown} />}
+
+                      {submenu &&
+                        <ul id={`submenu_${type}`} className="submenu">
+                          {submenu.map(li => <li key={li.id} onClick={(e) => {
+                            scrollToEquipmentsSection(li.id, li.type)
                             e.stopPropagation()
-                            console.log('click side')
-                              window.location.href = '/produto/'+product.id
+                            console.log('click submenu')
                             }}>
-                            {product.title}
+                            {(li.products && window.innerWidth > 768) && <ul className="side-menu">
+                              {li.products.map(product => <li key={product.id} onClick={(e) => {
+                                e.stopPropagation()
+                                console.log('click side')
+                                  window.location.href = '/produto/'+product.id
+
+                                  // navigate(`/produto/${product.id}`)
+                                }}>
+                                {product.title}
+                              </li>)}
+                            </ul>}{li.label}
                           </li>)}
-                        </ul>}{li.label}
-                      </li>)}
-                    </ul>
-                  }
-                </li>
-              );
-            })}
-        </NavigationLinks>
+                        </ul>
+                      }
+                    </li>
+                  );
+                })}
+            </NavigationLinks>
 
-        {/* <MobileButtonsGrid>
-          <CTAButton
-            iconSize={14}
-            bgColor="#032F6A"
-            title="Ir para loja virtual"
-            href="https://newresiquipe.wixsite.com/newresiquipe"
-            icon={faShoppingCart}
-          >
-            Loja Virtual
-          </CTAButton>
+            {/* <MobileButtonsGrid>
+              <CTAButton
+                iconSize={14}
+                bgColor="#032F6A"
+                title="Ir para loja virtual"
+                href="https://newresiquipe.wixsite.com/newresiquipe"
+                icon={faShoppingCart}
+              >
+                Loja Virtual
+              </CTAButton>
 
-          <CTAButton
-            bgColor="#26D366"
-            title="Fale conosco via WhatsApp"
-            href="https://wa.me/5511981637814"
-            icon={faWhatsapp}
-          >
-            Fale Conosco
-          </CTAButton>
-        </MobileButtonsGrid> */}
+              <CTAButton
+                bgColor="#26D366"
+                title="Fale conosco via WhatsApp"
+                href="https://wa.me/5511981637814"
+                icon={faWhatsapp}
+              >
+                Fale Conosco
+              </CTAButton>
+            </MobileButtonsGrid> */}
 
-        <MobileSocialGrid>
-          <a
-            title="Youtube - New Resiquipe"
-            href="https://www.youtube.com/user/resiquipe"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img alt="Youtube" src="/assets/images/social/youtube.svg" />
-          </a>
+            <MobileSocialGrid>
+              <a
+                title="Youtube - New Resiquipe"
+                href="https://www.youtube.com/user/resiquipe"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img alt="Youtube" src="/assets/images/social/youtube.svg" />
+              </a>
 
-          <a
-            title="Facebook - New Resiquipe"
-            href="https://www.facebook.com/newresiquipe.equipamentospararesinagem.3"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img alt="Facebook" src="/assets/images/social/facebook.svg" />
-          </a>
+              <a
+                title="Facebook - New Resiquipe"
+                href="https://www.facebook.com/newresiquipe.equipamentospararesinagem.3"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img alt="Facebook" src="/assets/images/social/facebook.svg" />
+              </a>
 
-          <a
-              title="Instagram - New Resiquipe"
-              href="http://instagram.com/newresiquipe"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img alt="Facebook" src="/assets/images/social/instagram.svg" />
-            </a>
-        </MobileSocialGrid>
-        </div>
-      </Navigation>
+              <a
+                  title="Instagram - New Resiquipe"
+                  href="http://instagram.com/newresiquipe"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img alt="Facebook" src="/assets/images/social/instagram.svg" />
+                </a>
+            </MobileSocialGrid>
+          </div>
+        </Navigation>
       </TopMenu>
     </>
   );

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { tablet } from '../../../devices'
+import { Link } from "react-router-dom";
 
 const FeaturedContainer = styled.section`
   display: flex;
@@ -170,27 +171,27 @@ const Featured = () => {
             showStatus={false}
             autoPlay
           >
-            <a href="produto/estufa-para-cura-22-bandejas">
+            <Link to="/produto/estufa-para-cura-22-bandejas">
             <div>
               <img src="/assets/images/slider/slider-01.jpg" />
             </div>
-            </a>
-            <a href="produto/maquina-dosadora-misturadora-com-tanques-para-resina-pu-new-resiquipe">
+            </Link>
+            <Link to="/produto/maquina-dosadora-misturadora-com-tanques-para-resina-pu-new-resiquipe">
 
             <div>
               <img src="/assets/images/slider/slider-02.jpg" />
             </div>
-            </a>
-            <a href="produto/dosadora-cnc-para-resina-pu-2-eixos">
+            </Link>
+            <Link to="/produto/dosadora-cnc-para-resina-pu-2-eixos">
             <div>
               <img src="/assets/images/slider/slider-03.jpg" />
             </div>
-            </a>
-            <a href="produto/desgaseificador-para-resina-pu">
-            <div onClick={() => { window.location.href="" }}>
+            </Link>
+            <Link to="/produto/desgaseificador-para-resina-pu">
+            <div>
               <img src="/assets/images/slider/slider-04.jpg" />
             </div>
-            </a>
+            </Link>
           </Carousel>
         </CarouselContainer>
 
