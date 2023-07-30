@@ -205,7 +205,7 @@ export const NavigationLinks = styled.ul`
       }
     }
     
-    &:hover .submenu {
+    &:hover .submenu, &:focus .submenu, &:active .submenu {
         display: block;
       }
 

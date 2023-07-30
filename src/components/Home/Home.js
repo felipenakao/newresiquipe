@@ -9,12 +9,34 @@ import Featured from './components/Featured';
 import Services from './components/Services/Services';
 import Videos from './components/Videos/Videos';
 
+
+
 const Home = () => {
+
+  function hideBanner() {
+    document.getElementById('bannerOverlay').classList.add('hide')
+  }
 
   const [isActive, setIsActive] = useState('');
   const [categoryExpand, toggleCategoryExpand] = useState(false);
   const [productionExpand, toggleProductionExpand] = useState(false);
   const [isProductionActive, setProductionActive] = useState('');
+
+  useEffect(() => {
+    // Update the document title using the browser API
+
+
+  });
+
+  const mountBanner = () => {
+    console.log('mountBanner')
+
+
+    setTimeout(function () {
+
+      document.getElementById('bannerOverlay').classList.add('show')
+    }, 5000)
+  }
   
   return (<>
   <Helmet>
@@ -61,9 +83,20 @@ const Home = () => {
 
   <Footer />
 
-  <div className='loadingElement'>
-    <img src='assets/images/logo-new-resiquipe.png' />
+  <img width="0px" height="0px" src='banner.jpg' onLoad={e => mountBanner()} onError={e => console.log('e', e) } />
+
+  <div id='bannerOverlay' className='bannerOverlay' onClick={hideBanner}>
+    <div className='bannerContent'>
+      <img src='banner.jpg' />
+
+      <div className='bannerClose' onClick={hideBanner}>X</div>
+    </div>
   </div>
+  
+    <div className='loadingElement'>
+      <img src='assets/images/logo-new-resiquipe.png' />
+    </div>
+
 </>)};
 
 export default Home

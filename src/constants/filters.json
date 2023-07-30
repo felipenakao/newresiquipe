@@ -4,7 +4,7 @@
   { "id": "aplicadores", "label": "Aplicadores" },
   { "id": "dosadores", "label": "Dosadores" },
   { "id": "cura", "label": "Equipamentos para Cura" },
-  { "id": "desgazeificador", "label": "Desgazeificador" },
+  { "id": "desgazeificador", "label": "Desgaseificador" },
   { "id": "cnc", "label": "CNC/Resina" },
   { "id": "mesa", "label": "Mesa Térmica" }
   ],

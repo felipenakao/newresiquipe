@@ -90,7 +90,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
 
             <a
               title="Instagram - New Resiquipe"
-              href="http://instagram.com/newresiquipe"
+              href="https://instagram.com/newresiquipe"
               target="_blank"
               rel="noreferrer"
             >
@@ -132,12 +132,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
         </Wrapper>
 
         <Navigation
-          id="mainNavigation" onClick={(e) => {
-            // e.stopPropagation();
-              // document.querySelectorAll('.submenu').forEach(e => {
-              //   e.style.display = "none"
-              // })  
-          }}
+          id="mainNavigation"
           aria-expanded={isOpen}
           show={isOpen}
         >
@@ -146,16 +141,26 @@ const Header = ({ setIsActive, setProductionActive }) => {
               {menuLabels.length &&
                 menuLabels.map(({ label, href, submenu, type }, i) => {
                   return (
-                    <li onClick={() => {
-                      if (href !== '/#equipamentos') {
+                    <li className="main-li" onClick={(e) => {
+                      e.stopPropagation()
+
+                      if (href !== '/#equipamentos' && window.innerWidth < 768) {
                         document.querySelectorAll('.submenu').forEach(e => {
                           e.style.display = "none"
                         })
-                      }
-                      // navigate(href)
-                      window.location.href = href
 
-                      console.log('HREF', href)
+                        setIsOpen(false)
+                      }
+
+
+                      if (href == '/#equipamentos' && e.target.className == 'main-li' && window.innerWidth < 768) {
+                        const display = e.target.lastChild.style.display == 'block' ? 'none' : 'block'
+                        e.target.lastChild.style.display = (window.innerWidth < 768) ? display : 'block'
+                      }
+
+
+
+                      window.location.href = href
                     }} key={i}>
                         {label}
 
@@ -163,12 +168,19 @@ const Header = ({ setIsActive, setProductionActive }) => {
 
                       {submenu &&
                         <ul id={`submenu_${type}`} className="submenu">
-                          {submenu.map(li => <li key={li.id} onClick={(e) => {
-                            scrollToEquipmentsSection(li.id, li.type)
+                          {submenu.map((li, index) => <li key={li.id} onClick={(e) => {
                             e.stopPropagation()
-                            console.log('click submenu')
+
+                            scrollToEquipmentsSection(li.id, li.type)
+
+                            if (window.innerWidth < 768) {
+                              document.querySelectorAll('.submenu').forEach(e => {
+                                e.style.display = "none"
+                              })
+                            }
+
                             }}>
-                            {(li.products && window.innerWidth > 768) && <ul className="side-menu">
+                            {(index !== 0 && li.products && window.innerWidth > 768) && <ul className="side-menu">
                               {li.products.map(product => <li key={product.id} onClick={(e) => {
                                 e.stopPropagation()
                                 console.log('click side')
@@ -229,7 +241,7 @@ const Header = ({ setIsActive, setProductionActive }) => {
 
               <a
                   title="Instagram - New Resiquipe"
-                  href="http://instagram.com/newresiquipe"
+                  href="https://instagram.com/newresiquipe"
                   target="_blank"
                   rel="noreferrer"
                 >
